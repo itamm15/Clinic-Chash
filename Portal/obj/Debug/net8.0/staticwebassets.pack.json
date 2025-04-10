@@ -17,6 +17,10 @@
       "PackagePath": "staticwebassets/images/clinic-icon.png"
     },
     {
+      "Id": "/Users/mateuszosinski/Desktop/clinic-chash/Portal/wwwroot/images/doctorhomepage.jpg",
+      "PackagePath": "staticwebassets/images/doctorhomepage.jpg"
+    },
+    {
       "Id": "/Users/mateuszosinski/Desktop/clinic-chash/Portal/wwwroot/js/site.js",
       "PackagePath": "staticwebassets/js/site.js"
     },

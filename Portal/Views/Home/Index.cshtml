@@ -7,16 +7,6 @@
         ("bi bi-calendar-check-fill me-2", "Łatwo umów wizytę", "Wybierz odpowiadający Ci termin, podaj swoje dane i otrzymaj pełny dostęp do usług. Bardzo szybki i łatwy proces!"),
         ("bi bi-clock-fill me-2", "Przyjdź na wizytę", "O wybranym terminie przypominimy Ci automatycznie za pomocą wiadomości SMS i mailem.")
     };
-
-    var doctors = new List<(string Icon, string Title, string Description)>
-    {
-        ("bi bi-heart-pulse me-2", "Kardiologia", "Specjalizacja zajmująca się diagnozowaniem i leczeniem chorób serca i układu krążenia."),
-        ("bi bi-activity me-2", "Neurologia", "Zajmuje się diagnozowaniem i leczeniem chorób układu nerwowego, takich jak udary, padaczka, czy stwardnienie rozsiane."),
-        ("bi bi-person-walking me-2", "Ortopedia", "Specjalizacja zajmująca się diagnozowaniem i leczeniem urazów, zaburzeń i chorób układu kostno-stawowego."),
-        ("bi bi-emoji-smile me-2", "Stomatologia", "Stomatologia to dziedzina medycyny zajmująca się zdrowiem jamy ustnej, zębów i przyzębia."),
-        ("bi bi-droplet-half me-2", "Diabetologia", "Specjalizacja zajmująca się leczeniem cukrzycy i jej powikłań."),
-        ("bi bi-heart me-2", "Pediatria", "Koncentruje się na zdrowiu i leczeniu dzieci, od noworodków po młodzież.")
-    };
 }
 
 <div class="position-relative doctor-image-container">
@@ -46,27 +36,4 @@
   </div>
 </div>
 
-  <div class="container py-5">
-    <h3 class="text-center mb-4">
-      Znajdziesz u nas specjalistów z różnych specjalizacji, takich jak:
-    </h3>
-
-    <div class="row g-4 justify-content-center">
-
-    @foreach (var doctor in doctors)
-    {
-      <div class="col-12 col-md-6 col-lg-4">
-        <div class="card h-100 shadow-sm">
-          <div class="card-body">
-            <h5 class="card-title">
-              <i class="@doctor.Icon"></i> @doctor.Title
-            </h5>
-            <p class="card-text">
-              @doctor.Description
-            </p>
-          </div>
-        </div>
-      </div>
-    }
-
-  </div>
+@Html.Partial("_ServiceCard")

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "/wnsaRzG06jATBqzmZTgYynCUs2zUdSnrai1z0A0QKE=",
+  "Hash": "yTMnjd13Z0qK5Iv4QlPjmWSgpLYE7mcg6EWlI8Sp0xg=",
   "Source": "Portal",
   "BasePath": "_content/Portal",
   "Mode": "Default",
@@ -110,6 +110,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/images/clinic-icon.png"
+    },
+    {
+      "Identity": "/Users/mateuszosinski/Desktop/clinic-chash/Portal/wwwroot/images/doctorhomepage.jpg",
+      "SourceId": "Portal",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/mateuszosinski/Desktop/clinic-chash/Portal/wwwroot/",
+      "BasePath": "_content/Portal",
+      "RelativePath": "images/doctorhomepage.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/doctorhomepage.jpg"
     },
     {
       "Identity": "/Users/mateuszosinski/Desktop/clinic-chash/Portal/wwwroot/js/site.js",
