@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets/favicon.ico"
     },
     {
+      "Id": "/Users/mateuszosinski/Desktop/clinic-chash/Portal/wwwroot/images/clinic-icon.png",
+      "PackagePath": "staticwebassets/images/clinic-icon.png"
+    },
+    {
       "Id": "/Users/mateuszosinski/Desktop/clinic-chash/Portal/wwwroot/js/site.js",
       "PackagePath": "staticwebassets/js/site.js"
     },

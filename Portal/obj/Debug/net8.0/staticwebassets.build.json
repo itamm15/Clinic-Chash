@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "TebXaQ5xQD0NMyXJ2p/r263triA8F4efgITa+OcFpfs=",
+  "Hash": "/wnsaRzG06jATBqzmZTgYynCUs2zUdSnrai1z0A0QKE=",
   "Source": "Portal",
   "BasePath": "_content/Portal",
   "Mode": "Default",
@@ -91,6 +91,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/favicon.ico"
+    },
+    {
+      "Identity": "/Users/mateuszosinski/Desktop/clinic-chash/Portal/wwwroot/images/clinic-icon.png",
+      "SourceId": "Portal",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/mateuszosinski/Desktop/clinic-chash/Portal/wwwroot/",
+      "BasePath": "_content/Portal",
+      "RelativePath": "images/clinic-icon.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/clinic-icon.png"
     },
     {
       "Identity": "/Users/mateuszosinski/Desktop/clinic-chash/Portal/wwwroot/js/site.js",
