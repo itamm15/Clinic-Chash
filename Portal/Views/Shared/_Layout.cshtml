@@ -1,4 +1,15 @@
-﻿<!DOCTYPE html>
+﻿@{
+    var menuItems = new List<(string Link, string Title)>
+    {
+        ("/", "STRONA GŁÓWNA"),
+        ("/about", "O NAS"),
+        ("/doctors", "SPECJALIŚCI"),
+        ("/services", "USŁUGI"),
+        ("/contact", "KONTAKT")
+    };
+}
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -22,26 +33,17 @@
         </button>
         <div class="collapse navbar-collapse justify-content-end me-2" id="main-navbar">
         <ul class="navbar-nav">
+            @foreach (var menuItem in menuItems) {
+                <li class="nav-item">
+                    <a class="nav-link text-dark me-2 text-decoration-underline-class" href="@menuItem.Link">@menuItem.Title</a>
+                </li>
+            }
+
             <li class="nav-item">
-            <a class="nav-link text-dark me-2 text-decoration-underline-class" href="/">STRONA GŁÓWNA</a>
+                <a class="btn btn-success me-2 text-white" href="/account">Moje konto</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link text-dark me-2 text-decoration-underline-class" href="/about">O NAS</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link text-dark me-2 text-decoration-underline-class" href="/doctors">SPECJALIŚCI</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link text-dark me-2 text-decoration-underline-class" href="/services">USŁUGI</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link text-dark me-2 text-decoration-underline-class" href="/contact">KONTAKT</a>
-            </li>
-            <li class="nav-item">
-            <a class="btn btn-success me-2 text-white" href="/account">Moje konto</a>
-            </li>
-            <li class="nav-item">
-            <a class="btn btn-success me-2 text-white" href="/calendar">Umów wizytę</a>
+                <a class="btn btn-success me-2 text-white" href="/calendar">Umów wizytę</a>
             </li>
         </ul>
         </div>
