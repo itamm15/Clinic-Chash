@@ -20,3 +20,9 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.doctor-image-container {
+  height: 650px;
+  width: 100%;
+  overflow: hidden;
+}
