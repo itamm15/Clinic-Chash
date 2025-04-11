@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "FC/47N8YksAkjYSJ2RhtZxThjFAVa8AhtVJK4+tebfg=",
+  "Hash": "fmOBFVis1+/QAjEvE1B8fhRheVPUcjUM2ClulH/AhNI=",
   "Source": "Intranet",
   "BasePath": "_content/Intranet",
   "Mode": "Default",
@@ -91,6 +91,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/favicon.ico"
+    },
+    {
+      "Identity": "/Users/mateuszosinski/Desktop/clinic-chash/Intranet/wwwroot/images/clinic-icon.png",
+      "SourceId": "Intranet",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/mateuszosinski/Desktop/clinic-chash/Intranet/wwwroot/",
+      "BasePath": "_content/Intranet",
+      "RelativePath": "images/clinic-icon.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/clinic-icon.png"
     },
     {
       "Identity": "/Users/mateuszosinski/Desktop/clinic-chash/Intranet/wwwroot/js/site.js",
