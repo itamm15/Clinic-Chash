@@ -1,0 +1,53 @@
+@{
+  ViewData["Title"] = "Lekarze";
+
+  var tempDoctors = new List<(int Id, string Name, string LastName, string Date, string Address, string PhoneNumber)>
+  {
+      (1, "Krzysztof", "Zjadek", "Poniedziałek - Piątek, 8:00 - 16:00", "Nad Reglami 23, Zakopane", "+48 123 456 789"),
+      (2, "Karina", "Wojska", "Poniedziałek - Czwartek, 8:00 - 12:00", "Nad Reglami 23, Zakopane", "+48 123 456 789"),
+      (3, "Karol", "Poss", "Wtorek - Piątek, 12:00 - 19:00", "Nad Reglami 23, Zakopane", "+48 123 456 789"),
+      (4, "Karol", "Wojteka", "Poniedziałek - Piątek, 9:30 - 15:00", "Nad Reglami 23, Zakopane", "+48 123 456 789"),
+      (5, "Magdalena", "Kowalska", "Środa - Piątek, 8:30 - 19:00", "Nad Reglami 23, Zakopane", "+48 123 456 789"),
+      (6, "Szymon", "Szczepała", "Czwartek - Piątek, 8:00 - 19:00", "Nad Reglami 23, Zakopane", "+48 123 456 789")
+  };
+}
+
+<div class="container-fluid py-5">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Imię</th>
+        <th scope="col">Nazwisko</th>
+        <th scope="col">Przyjęcia</th>
+        <th scope="col">Adres zamieszkania</th>
+        <th scope="col">Numer telefonu</th>
+        <th scope="col">Akcje</th>
+      </tr>
+    </thead>
+    <tbody>
+      @foreach (var doctor in @tempDoctors)
+      {
+        <tr>
+          <th scope="row">@doctor.Id</th>
+          <th scope="row">@doctor.Name</th>
+          <th scope="row">@doctor.LastName</th>
+          <th scope="row">@doctor.Date</th>
+          <th scope="row">@doctor.Address</th>
+          <th scope="row">@doctor.PhoneNumber</th>
+          <th>
+            <a href="#" class="btn btn-outline-primary btn-sm me-1" title="Edytuj">
+              <i class="bi bi-pencil-square"></i>
+            </a>
+            <a href="#" class="btn btn-outline-danger btn-sm me-1" title="Usuń">
+              <i class="bi bi-trash-fill"></i>
+            </a>
+            <a href="#" class="btn btn-outline-secondary btn-sm" title="Zobacz">
+              <i class="bi bi-eye-fill"></i>
+            </a>
+          </th>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>
