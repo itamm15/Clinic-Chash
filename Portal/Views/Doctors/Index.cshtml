@@ -1,0 +1,45 @@
+@{
+    ViewData["Title"] = "Harmonogram lekarzy";
+
+    var doctors = new List<(string Name, string Spec, string Day, string Time, string Icon)>
+    {
+        ("Dr. Krzysztof Zjadek", "Kardiolog", "Poniedziałek - Piątek", "8:00 - 16:00", "bi bi-heart-pulse"),
+        ("Dr. Karina Wojska", "Neurolog", "Poniedziałek - Czwartek", "8:00 - 12:00", "bi bi-activity"),
+        ("Dr. Karol Poss", "Ortopeda", "Wtorek - Piątek", "12:00 - 19:00", "bi bi-person-walking"),
+        ("Dr. Karol Wojteka", "Stomatolog", "Poniedziałek - Piątek", "9:30 - 15:00", "bi bi-emoji-smile"),
+        ("Dr. Magdalena Kowalska", "Diabetolog", "Środa - Piątek", "8:30 - 19:00", "bi bi-droplet-half"),
+        ("Dr. Szymon Szczepała", "Pediatra", "Czwartek - Piątek", "8:00 - 19:00", "bi bi-balloon")
+    };
+}
+
+
+<div class="container py-5">
+  <h3 class="text-center mb-4">Specjaliści w przychodni Świtałka</h3>
+
+  <div class="row gy-4 justify-content-center">
+    @foreach (var doctor in @doctors)
+    {
+      <div class="col-md-6">
+        <div class="card bg-success text-white shadow-sm">
+          <div class="card-body d-flex align-items-start p-3.5">
+            <div>
+              <h5 class="card-title mb-2">@doctor.Name</h5>
+              <div class="d-flex">
+                  <i class="@doctor.Icon me-3"></i>
+                  <p class="card-text">@doctor.Spec</p>
+              </div>
+              <div class="d-flex mt-1">
+                <i class="bi bi-calendar-date me-3"></i>
+                <p class="card-text">@doctor.Day</p>
+              </div>
+              <div class="d-flex mt-1">
+                <i class="bi bi-clock-fill me-3"></i>
+                <p class="card-text">@doctor.Time</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</div>
