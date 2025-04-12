@@ -1,8 +1,95 @@
 ﻿@{
-    ViewData["Title"] = "Strona glówna";
+    ViewData["Title"] = "Strona główna";
+
+    var tempAppointments = new List<(int Id, string PatientName, string PatientLastName, string DoctorName, string DoctorLastName, string Specialization, string Date, string Status)>
+    {
+        (1, "Anna", "Nowak", "Krzysztof", "Zjadek", "Kardiolog", "2025-04-15 10:00", "Zaplanowana"),
+        (2, "Marek", "Wiśniewski", "Karina", "Wojska", "Neurolog", "2025-04-15 11:30", "Zakończona"),
+        (3, "Julia", "Kowalczyk", "Karol", "Poss", "Ortopeda", "2025-04-16 09:00", "Zaplanowana"),
+        (4, "Tomasz", "Kamiński", "Magdalena", "Kowalska", "Diabetolog", "2025-04-17 13:45", "Odwołana"),
+        (5, "Monika", "Dąbrowska", "Karol", "Wojteka", "Stomatolog", "2025-04-18 08:30", "Zaplanowana"),
+        (6, "Paweł", "Zieliński", "Szymon", "Szczepała", "Pediatra", "2025-04-19 14:00", "Zakończona")
+    };
+
+    var tempPatients = new List<(int Id, string Name, string LastName, string DateOfBirth, string Address, string PhoneNumber)>
+    {
+        (1, "Anna", "Nowak", "1990-05-15", "ul. Leśna 5, Zakopane", "+48 111 222 333"),
+        (2, "Marek", "Wiśniewski", "1985-10-02", "ul. Górska 10, Zakopane", "+48 222 333 444"),
+        (3, "Julia", "Kowalczyk", "1992-03-20", "ul. Słoneczna 3, Zakopane", "+48 333 444 555"),
+        (4, "Tomasz", "Kamiński", "1978-07-12", "ul. Widokowa 9, Zakopane", "+48 444 555 666"),
+        (5, "Monika", "Dąbrowska", "2000-12-30", "ul. Krótka 1, Zakopane", "+48 555 666 777"),
+        (6, "Paweł", "Zieliński", "1988-09-05", "ul. Jodłowa 17, Zakopane", "+48 666 777 888")
+    };
+
+    var tempDoctors = new List<(int Id, string Name, string LastName, string Date, string Address, string PhoneNumber)>
+    {
+        (1, "Krzysztof", "Zjadek", "Poniedziałek - Piątek, 8:00 - 16:00", "Nad Reglami 23, Zakopane", "+48 123 456 789"),
+        (2, "Karina", "Wojska", "Poniedziałek - Czwartek, 8:00 - 12:00", "Nad Reglami 23, Zakopane", "+48 123 456 789"),
+        (3, "Karol", "Poss", "Wtorek - Piątek, 12:00 - 19:00", "Nad Reglami 23, Zakopane", "+48 123 456 789"),
+        (4, "Karol", "Wojteka", "Poniedziałek - Piątek, 9:30 - 15:00", "Nad Reglami 23, Zakopane", "+48 123 456 789"),
+        (5, "Magdalena", "Kowalska", "Środa - Piątek, 8:30 - 19:00", "Nad Reglami 23, Zakopane", "+48 123 456 789"),
+        (6, "Szymon", "Szczepała", "Czwartek - Piątek, 8:00 - 19:00", "Nad Reglami 23, Zakopane", "+48 123 456 789")
+    };
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container mt-4">
+    <div class="row text-center">
+        <div class="col-md-4">
+            <div class="card bg-light mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Wizyty ogółem</h5>
+                    <p class="display-6">@tempAppointments.Count</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card bg-light mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Pacjenci</h5>
+                    <p class="display-6">@tempPatients.Count</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card bg-light mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Lekarze</h5>
+                    <p class="display-6">@tempDoctors.Count</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h4 class="mt-5">Nadchodzące wizyty</h4>
+    <table class="table table-bordered table-striped">
+        <thead class="table-light">
+            <tr>
+                <th>Pacjent</th>
+                <th>Lekarz</th>
+                <th>Specjalizacja</th>
+                <th>Data</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var appt in tempAppointments.Take(5))
+            {
+                <tr>
+                    <td>@appt.PatientName @appt.PatientLastName</td>
+                    <td>@appt.DoctorName @appt.DoctorLastName</td>
+                    <td>@appt.Specialization</td>
+                    <td>@appt.Date</td>
+                    <td>
+                        @if (appt.Status == "Zaplanowana") {
+                            <span class="badge bg-primary">@appt.Status</span>
+                        } else if (appt.Status == "Zakończona") {
+                            <span class="badge bg-success">@appt.Status</span>
+                        } else {
+                            <span class="badge bg-danger">@appt.Status</span>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
 </div>
