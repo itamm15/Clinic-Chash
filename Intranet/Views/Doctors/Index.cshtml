@@ -15,8 +15,40 @@
 <div class="container-fluid py-5">
   <div class="d-flex justify-content-between">
     <h3>Lekarze</h3>
-    <button type="button" class="btn btn-success">Dodaj lekarza</button>
+    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#create-doctor">Dodaj lekarza</button>
   </div>
+
+  <div class="modal fade" id="create-doctor" tabindex="-1" aria-labelledby="createDoctorLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form>
+          <div class="modal-header">
+            <h5 class="modal-title" id="createDoctorLabel">Dodaj lekarza</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Zamknij"></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label for="firstName" class="form-label">Imię</label>
+              <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Wprowadź imię" required>
+            </div>
+            <div class="mb-3">
+              <label for="lastName" class="form-label">Nazwisko</label>
+              <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Wprowadź nazwisko" required>
+            </div>
+            <div class="mb-3">
+              <label for="birthDate" class="form-label">Data urodzenia</label>
+              <input type="date" class="form-control" id="birthDate" name="birthDate" required>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zamknij</button>
+            <button type="submit" class="btn btn-success">Zapisz</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
   <table class="table table-striped my-4">
     <thead>
       <tr>
