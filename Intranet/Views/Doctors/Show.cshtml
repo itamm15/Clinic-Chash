@@ -1,0 +1,33 @@
+@{
+    ViewData["Title"] = "Lekarz";
+    int doctorId = (int)ViewData["Id"];
+
+    var tempDoctors = new List<(int Id, string Name, string LastName, string Date, string Address, string PhoneNumber)>
+    {
+        (1, "Krzysztof", "Zjadek", "Poniedziałek - Piątek, 8:00 - 16:00", "Nad Reglami 23, Zakopane", "+48 123 456 789"),
+        (2, "Karina", "Wojska", "Poniedziałek - Czwartek, 8:00 - 12:00", "Nad Reglami 23, Zakopane", "+48 123 456 789"),
+        (3, "Karol", "Poss", "Wtorek - Piątek, 12:00 - 19:00", "Nad Reglami 23, Zakopane", "+48 123 456 789"),
+        (4, "Karol", "Wojteka", "Poniedziałek - Piątek, 9:30 - 15:00", "Nad Reglami 23, Zakopane", "+48 123 456 789"),
+        (5, "Magdalena", "Kowalska", "Środa - Piątek, 8:30 - 19:00", "Nad Reglami 23, Zakopane", "+48 123 456 789"),
+        (6, "Szymon", "Szczepała", "Czwartek - Piątek, 8:00 - 19:00", "Nad Reglami 23, Zakopane", "+48 123 456 789")
+    };
+
+    var doctor = tempDoctors.Find(doctor => doctor.Id == doctorId);
+}
+
+<div class="container d-flex justify-content-center align-items-center" style="padding-top: 40px">
+    <form style="width: 100%; max-width: 500px;">
+        <div class="form-group">
+            <label for="name">Imię:</label>
+            <input type="text" class="form-control" id="name" value="@doctor.Name" />
+        </div>
+        <div class="form-group py-4">
+            <label for="lastName">Nazwisko:</label>
+            <input type="text" class="form-control" id="lastName" value="@doctor.LastName" />
+        </div>
+        <div class="form-group">
+            <label for="dob">Data Urodzenia:</label>
+            <input type="text" class="form-control" id="dob" value="@doctor.Date" />
+        </div>
+    </form>
+</div>

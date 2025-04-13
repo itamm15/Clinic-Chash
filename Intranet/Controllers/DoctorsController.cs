@@ -9,4 +9,10 @@ public class DoctorsController : Controller
   {
     return View();
   }
+
+  public IActionResult Show(int Id)
+  {
+    ViewData["Id"] = Id;
+    return View(Id);
+  }
 }
