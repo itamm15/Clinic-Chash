@@ -21,6 +21,10 @@
       "PackagePath": "staticwebassets/images/doctorhomepage.jpg"
     },
     {
+      "Id": "/Users/mateuszosinski/Desktop/clinic-chash/Portal/wwwroot/images/stomaszek-06042025121059-OiAK_cw1.pdf",
+      "PackagePath": "staticwebassets/images/stomaszek-06042025121059-OiAK_cw1.pdf"
+    },
+    {
       "Id": "/Users/mateuszosinski/Desktop/clinic-chash/Portal/wwwroot/js/site.js",
       "PackagePath": "staticwebassets/js/site.js"
     },

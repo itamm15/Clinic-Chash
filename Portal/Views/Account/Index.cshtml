@@ -1,0 +1,60 @@
+@{
+  ViewData["Title"] = "Moje konto";
+}
+
+<div class="d-flex justify-content-center py-4">
+  <div class="card shadow-sm" style="width: 350px;">
+    <div class="card-body pt-4">
+      <h3 class="card-title text-center">Twoje dane</h3>
+      <div class="card-text">
+        <form>
+          <div class="mb-3">
+            <label for="firstname" class="form-label">Imie</label>
+            <input type="text" class="form-control" id="firstname" value="Mateusz" disabled>
+          </div>
+
+          <div class="mb-3">
+            <label for="lastname" class="form-label">Nazwisko</label>
+            <input type="text" class="form-control" id="lastname" value="Osiński" disabled>
+          </div>
+
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" value="mateusz.osinski@gmail.com" disabled>
+          </div>
+        </form>
+      </div>
+      <a href="/accountEdit" class="btn btn-success d-flex mx-auto mt-3">Edytuj profil</a>
+    </div>
+  </div>
+  <div>
+
+<div class="container my-5" style="width: 800px">
+  <div class="accordion" id="aboutusAccordion">
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#wizyty" aria-expanded="true" aria-controls="wizyty">
+          <i class="bi bi-info-circle-fill me-2"></i><strong>Twoje wizyty</strong>
+        </button>
+      </h2>
+      <div id="wizyty" class="accordion-collapse collapse show" data-bs-parent="#aboutusAccordion">
+        <div class="accordion-body">
+          Tutaj beda wizyty uzytkownika
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#prescriptions" aria-expanded="true" aria-controls="team">
+          <i class="bi bi-people-fill me-2"></i> <strong>Recepty</strong>
+        </button>
+      </h2>
+      <div id="prescriptions" class="accordion-collapse collapse" data-bs-parent="#aboutusAccordion">
+        <div class="accordion-body">
+          Tutaj beda recepty uzytkownika
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

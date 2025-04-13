@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "yTMnjd13Z0qK5Iv4QlPjmWSgpLYE7mcg6EWlI8Sp0xg=",
+  "Hash": "TJVvTnyiS/cR7Q1/miccdwG5dqAdlqkeUNClxs0RxWw=",
   "Source": "Portal",
   "BasePath": "_content/Portal",
   "Mode": "Default",
@@ -129,6 +129,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/images/doctorhomepage.jpg"
+    },
+    {
+      "Identity": "/Users/mateuszosinski/Desktop/clinic-chash/Portal/wwwroot/images/stomaszek-06042025121059-OiAK_cw1.pdf",
+      "SourceId": "Portal",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/mateuszosinski/Desktop/clinic-chash/Portal/wwwroot/",
+      "BasePath": "_content/Portal",
+      "RelativePath": "images/stomaszek-06042025121059-OiAK_cw1.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/stomaszek-06042025121059-OiAK_cw1.pdf"
     },
     {
       "Identity": "/Users/mateuszosinski/Desktop/clinic-chash/Portal/wwwroot/js/site.js",
