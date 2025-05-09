@@ -4,14 +4,14 @@
     "/Users/mateuszosinski/Desktop/clinic-chash/Intranet/Intranet.csproj": {}
   },
   "projects": {
-    "/Users/mateuszosinski/Desktop/clinic-chash/Intranet/Intranet.csproj": {
+    "/Users/mateuszosinski/Desktop/clinic-chash/Clinic.Database/Clinic.Database.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/mateuszosinski/Desktop/clinic-chash/Intranet/Intranet.csproj",
-        "projectName": "Intranet",
-        "projectPath": "/Users/mateuszosinski/Desktop/clinic-chash/Intranet/Intranet.csproj",
+        "projectUniqueName": "/Users/mateuszosinski/Desktop/clinic-chash/Clinic.Database/Clinic.Database.csproj",
+        "projectName": "Clinic.Database",
+        "projectPath": "/Users/mateuszosinski/Desktop/clinic-chash/Clinic.Database/Clinic.Database.csproj",
         "packagesPath": "/Users/mateuszosinski/.nuget/packages/",
-        "outputPath": "/Users/mateuszosinski/Desktop/clinic-chash/Intranet/obj/",
+        "outputPath": "/Users/mateuszosinski/Desktop/clinic-chash/Clinic.Database/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/mateuszosinski/.nuget/NuGet/NuGet.Config"
@@ -42,6 +42,90 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.4, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[9.0.4, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.204/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/mateuszosinski/Desktop/clinic-chash/Intranet/Intranet.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/mateuszosinski/Desktop/clinic-chash/Intranet/Intranet.csproj",
+        "projectName": "Intranet",
+        "projectPath": "/Users/mateuszosinski/Desktop/clinic-chash/Intranet/Intranet.csproj",
+        "packagesPath": "/Users/mateuszosinski/.nuget/packages/",
+        "outputPath": "/Users/mateuszosinski/Desktop/clinic-chash/Intranet/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/mateuszosinski/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/mateuszosinski/Desktop/clinic-chash/Clinic.Database/Clinic.Database.csproj": {
+                "projectPath": "/Users/mateuszosinski/Desktop/clinic-chash/Clinic.Database/Clinic.Database.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[9.0.4, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

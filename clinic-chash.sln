@@ -1,10 +1,12 @@
-Microsoft Visual Studio Solution File, Format Version 12.00
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.2.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portal", "Portal\Portal.csproj", "{8D7551F2-9FDF-34FC-60C8-7FF0E4F59EAD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intranet", "Intranet\Intranet.csproj", "{F5DD49C3-A57E-C01C-369D-359810889C68}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clinic.Database", "Clinic.Database\Clinic.Database.csproj", "{FD16DDE1-8283-4661-88B2-9DFF6C63993B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,6 +22,10 @@ Global
 		{F5DD49C3-A57E-C01C-369D-359810889C68}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F5DD49C3-A57E-C01C-369D-359810889C68}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F5DD49C3-A57E-C01C-369D-359810889C68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD16DDE1-8283-4661-88B2-9DFF6C63993B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD16DDE1-8283-4661-88B2-9DFF6C63993B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD16DDE1-8283-4661-88B2-9DFF6C63993B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD16DDE1-8283-4661-88B2-9DFF6C63993B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
