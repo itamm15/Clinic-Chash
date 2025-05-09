@@ -24,4 +24,15 @@ public class PatientsController : Controller
     _context.SaveChanges();
     return RedirectToAction("Index");
   }
+
+  [HttpPost]
+  public IActionResult Delete(int id)
+  {
+    var patient = _context.Patients.Find(id);
+    if (patient == null) return NotFound();
+
+    _context.Patients.Remove(patient);
+    _context.SaveChanges();
+    return RedirectToAction("Index");
+  }
 }

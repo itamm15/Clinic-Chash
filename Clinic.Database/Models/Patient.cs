@@ -1,5 +1,6 @@
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 public class Patient
 {
@@ -24,7 +25,7 @@ public class Patient
     public string PhoneNumber { get; set; }
 
     [Required(ErrorMessage = "Data urodzenia jest wymagana")]
-    [DataType(DataType.Date)]
+    [Column(TypeName = "date")]
     public DateTime DateOfBirth { get; set; }
 
     [StringLength(200, ErrorMessage = "Adres nie może być dłuższy niż 200 znaków")]
