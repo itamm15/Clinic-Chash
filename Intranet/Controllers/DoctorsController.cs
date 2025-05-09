@@ -13,6 +13,6 @@ public class DoctorsController : Controller
   public IActionResult Show(int Id)
   {
     ViewData["Id"] = Id;
-    return View(Id);
+    return View();
   }
 }
