@@ -9,7 +9,12 @@
     <h3>Pacjenci</h3>
     <button type="button" class="btn btn-success">Dodaj pacjenta</button>
   </div>
-  <table class="table table-striped my-4"">
+  @if (!Model.Any()) {
+    <p>Nie ma pacjentow</p>
+  }
+  else
+  {
+   <table class="table table-striped my-4">
     <thead>
       <tr>
         <th scope="col">ID</th>
@@ -46,4 +51,5 @@
       }
     </tbody>
   </table>
+  }
 </div>
