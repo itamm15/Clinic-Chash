@@ -7,7 +7,7 @@
 <div class="container-fluid py-5">
   <div class="d-flex justify-content-between">
     <h3>Pacjenci</h3>
-    <button type="button" class="btn btn-success">Dodaj pacjenta</button>
+    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#create-patient">Dodaj pacjenta</button>
   </div>
   @if (!Model.Any()) {
     <p>Nie ma pacjentow</p>
@@ -53,3 +53,46 @@
   </table>
   }
 </div>
+
+  <div class="modal fade" id="create-patient" tabindex="-1" aria-labelledby="createPatientLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form asp-action="Create" method="post">
+          <div class="modal-header">
+            <h5 class="modal-title" id="createPatientLabel">Dodaj lekarza</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Zamknij"></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label for="FirstName" class="form-label">Imię</label>
+              <input type="text" class="form-control" id="FirstName" name="FirstName" placeholder="Wprowadź imię" required>
+            </div>
+            <div class="mb-3">
+              <label for="LastName" class="form-label">Nazwisko</label>
+              <input type="text" class="form-control" id="LastName" name="LastName" placeholder="Wprowadź nazwisko" required>
+            </div>
+            <div class="mb-3">
+              <label for="Address" class="form-label">Adres</label>
+              <input type="text" class="form-control" id="Address" name="Address" placeholder="Wprowadź adres" required>
+            </div>
+            <div class="mb-3">
+              <label for="Email" class="form-label">Email</label>
+              <input type="Email" class="form-control" id="Email" name="Email" placeholder="Wprowadź Email" required>
+            </div>
+            <div class="mb-3">
+              <label for="PhoneNumber" class="form-label">Numer telefonu</label>
+              <input type="number" class="form-control" id="PhoneNumber" name="PhoneNumber" placeholder="Wprowadź numer telefonu" required>
+            </div>
+            <div class="mb-3">
+              <label for="DateOfBirth" class="form-label">Data urodzenia</label>
+              <input type="date" class="form-control" id="DateOfBirth" name="DateOfBirth" required>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zamknij</button>
+            <button type="submit" class="btn btn-success">Zapisz</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>

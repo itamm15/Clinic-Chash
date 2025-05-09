@@ -15,4 +15,13 @@ public class PatientsController : Controller
     var patients = _context.Patients.ToList();
     return View(patients);
   }
+
+  [HttpPost]
+  public IActionResult Create(Patient patient)
+  {
+    Console.WriteLine(patient);
+    _context.Patients.Add(patient);
+    _context.SaveChanges();
+    return RedirectToAction("Index");
+  }
 }
