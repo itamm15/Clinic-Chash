@@ -1,0 +1,15 @@
+/Users/mateuszosinski/Desktop/clinic-chash/Clinic.Database/bin/Debug/net8.0/Clinic.Database.deps.json
+/Users/mateuszosinski/Desktop/clinic-chash/Clinic.Database/bin/Debug/net8.0/Clinic.Database.runtimeconfig.json
+/Users/mateuszosinski/Desktop/clinic-chash/Clinic.Database/bin/Debug/net8.0/Clinic.Database.dll
+/Users/mateuszosinski/Desktop/clinic-chash/Clinic.Database/bin/Debug/net8.0/Clinic.Database.pdb
+/Users/mateuszosinski/Desktop/clinic-chash/Clinic.Database/obj/Debug/net8.0/Clinic.Database.csproj.AssemblyReference.cache
+/Users/mateuszosinski/Desktop/clinic-chash/Clinic.Database/obj/Debug/net8.0/Clinic.Database.GeneratedMSBuildEditorConfig.editorconfig
+/Users/mateuszosinski/Desktop/clinic-chash/Clinic.Database/obj/Debug/net8.0/Clinic.Database.AssemblyInfoInputs.cache
+/Users/mateuszosinski/Desktop/clinic-chash/Clinic.Database/obj/Debug/net8.0/Clinic.Database.AssemblyInfo.cs
+/Users/mateuszosinski/Desktop/clinic-chash/Clinic.Database/obj/Debug/net8.0/Clinic.Database.csproj.CoreCompileInputs.cache
+/Users/mateuszosinski/Desktop/clinic-chash/Clinic.Database/obj/Debug/net8.0/Clinic.Database.sourcelink.json
+/Users/mateuszosinski/Desktop/clinic-chash/Clinic.Database/obj/Debug/net8.0/Clinic.Database.dll
+/Users/mateuszosinski/Desktop/clinic-chash/Clinic.Database/obj/Debug/net8.0/refint/Clinic.Database.dll
+/Users/mateuszosinski/Desktop/clinic-chash/Clinic.Database/obj/Debug/net8.0/Clinic.Database.pdb
+/Users/mateuszosinski/Desktop/clinic-chash/Clinic.Database/obj/Debug/net8.0/Clinic.Database.genruntimeconfig.cache
+/Users/mateuszosinski/Desktop/clinic-chash/Clinic.Database/obj/Debug/net8.0/ref/Clinic.Database.dll
