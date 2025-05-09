@@ -1,7 +1,6 @@
 @model List<Patient>
 @{
   ViewData["Title"] = "Pacjenci";
-
 }
 
 <div class="container-fluid py-5">
@@ -37,7 +36,7 @@
           <th scope="row">@patient.Address</th>
           <th scope="row">@patient.PhoneNumber</th>
           <th>
-            <a href="#" class="btn btn-outline-primary btn-sm me-1" title="Edytuj">
+            <a asp-action="Edit" asp-route-id="@patient.Id" class="btn btn-outline-primary btn-sm me-1" title="Edytuj">
               <i class="bi bi-pencil-square"></i>
             </a>
             <form asp-action="Delete" method="post" asp-route-id="@patient.Id" class="d-inline">
@@ -45,9 +44,6 @@
                 <i class="bi bi-trash-fill"></i>
               </button>
             </form>
-            <a href="#" class="btn btn-outline-secondary btn-sm" title="Zobacz">
-              <i class="bi bi-eye-fill"></i>
-            </a>
           </th>
         </tr>
       }

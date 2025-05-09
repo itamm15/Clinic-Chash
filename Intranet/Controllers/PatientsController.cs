@@ -35,4 +35,21 @@ public class PatientsController : Controller
     _context.SaveChanges();
     return RedirectToAction("Index");
   }
+
+  [HttpGet]
+  public IActionResult Edit(int id)
+  {
+    var patient = _context.Patients.Find(id);
+    if (patient == null) return NotFound();
+
+    return View(patient);
+  }
+
+  [HttpPost]
+  public IActionResult Update(Patient patient)
+  {
+    _context.Patients.Update(patient);
+    _context.SaveChanges();
+    return RedirectToAction("Index");
+  }
 }
