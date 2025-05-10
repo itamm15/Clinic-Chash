@@ -1,0 +1,70 @@
+@model List<Specialization>
+
+@{
+  ViewData["Title"] = "Specjalizacje";
+}
+
+<div class="container-fluid py-5">
+  <div class="d-flex justify-content-between">
+    <h3>Specjalizacje</h3>
+    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#create-specialization">Dodaj specjalizację</button>
+  </div>
+
+  @if (!Model.Any()) {
+    <p class="text-muted">Brak specjalizacji</p>
+  }
+  else
+  {
+    <table class="table table-striped my-4">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nazwa</th>
+          <th>Akcje</th>
+        </tr>
+      </thead>
+      <tbody>
+        @foreach (var specialization in Model)
+        {
+          <tr>
+            <td>@specialization.Id</td>
+            <td>@specialization.Name</td>
+            <td>
+              <a asp-action="Edit" asp-route-id="@specialization.Id" class="btn btn-outline-primary btn-sm me-1" title="Edytuj">
+                <i class="bi bi-pencil-square"></i>
+              </a>
+              <form asp-action="Delete" method="post" asp-route-id="@specialization.Id" class="d-inline">
+                <button type="submit" class="btn btn-outline-danger btn-sm me-1" title="Usuń" onclick="return confirm('Na pewno chcesz usunąć tę specjalizację?');">
+                  <i class="bi bi-trash-fill"></i>
+                </button>
+              </form>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  }
+</div>
+
+<div class="modal fade" id="create-specialization" tabindex="-1" aria-labelledby="createSpecializationLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form asp-action="Create" method="post">
+        <div class="modal-header">
+          <h5 class="modal-title" id="createSpecializationLabel">Dodaj specjalizację</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Zamknij"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="Name" class="form-label">Nazwa specjalizacji</label>
+            <input type="text" class="form-control" id="Name" name="Name" placeholder="np. Pediatria" required />
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zamknij</button>
+          <button type="submit" class="btn btn-success">Zapisz</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
