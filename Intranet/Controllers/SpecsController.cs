@@ -31,4 +31,21 @@ public class SpecsController : Controller
     _context.SaveChanges();
     return RedirectToAction("Index");
   }
+
+  [HttpGet]
+  public IActionResult Edit(int id)
+  {
+    var specialization = _context.Specializations.Find(id);
+    if (specialization == null) return NotFound();
+
+    return View(specialization);
+  }
+
+  [HttpPost]
+  public IActionResult Update(Specialization specialization)
+  {
+    _context.Specializations.Update(specialization);
+    _context.SaveChanges();
+    return RedirectToAction("Index");
+  }
 }

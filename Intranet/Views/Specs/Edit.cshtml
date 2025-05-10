@@ -1,0 +1,20 @@
+@model Specialization
+@{
+  ViewData["Title"] = "Modyfikuj specjalizacje";
+}
+
+<div class="container-fluid py-5" style="width: 500px">
+  <form asp-action="Update" method="post">
+    <input type="hidden" asp-for="Id" />
+
+    <div class="mb-3">
+      <label asp-for="Name" class="form-label">Nazwa</label>
+      <input asp-for="Name" class="form-control" required />
+    </div>
+
+    <div class="modal-footer">
+      <a asp-action="Index" class="btn btn-secondary m-2">Anuluj</a>
+      <button type="submit" class="btn btn-success">Zapisz</button>
+    </div>
+  </form>
+</div>
