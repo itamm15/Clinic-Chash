@@ -1,98 +1,59 @@
-@model DoctorIndexViewModel
+@model IEnumerable<Clinic.Database.Doctor>
+
 @{
-  ViewData["Title"] = "Lekarze";
+    ViewData["Title"] = "Index";
 }
 
-<div class="container-fluid py-5">
-  <div class="d-flex justify-content-between">
-    <h3>Lekarze</h3>
-    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#create-doctor">Dodaj lekarza</button>
-  </div>
+<h1>Index</h1>
 
-  @if (!Model.Doctors.Any()) {
-    <p>Nie ma lekarzy</p>
-  }
-  else
-  {
-    <table class="table table-striped my-4">
-      <thead>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
         <tr>
-          <th scope="col">ID</th>
-          <th scope="col">Imię</th>
-          <th scope="col">Nazwisko</th>
-          <th scope="col">Email</th>
-          <th scope="col">Specjalizacja</th>
-          <th scope="col">Data urodzenia</th>
-          <th scope="col">Akcje</th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Specialization)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateOfBirth)
+            </th>
+            <th></th>
         </tr>
-      </thead>
-      <tbody>
-        @foreach (var doctor in Model.Doctors)
-        {
-          <tr>
-            <th scope="row">@doctor.Id</th>
-            <td>@doctor.Name</td>
-            <td>@doctor.LastName</td>
-            <td>@doctor.Email</td>
-            <td>@doctor.Specialization.Name</td>
-            <td>@doctor.DateOfBirth.ToString("yyyy-MM-dd")</td>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
             <td>
-              <a asp-action="Edit" asp-route-id="@doctor.Id" class="btn btn-outline-primary btn-sm me-1" title="Edytuj">
-                <i class="bi bi-pencil-square"></i>
-              </a>
-              <form asp-action="Delete" method="post" asp-route-id="@doctor.Id" class="d-inline">
-                <button type="submit" class="btn btn-outline-danger btn-sm me-1" title="Usuń" onclick="return confirm('Na pewno chcesz usunąć lekarza?');">
-                  <i class="bi bi-trash-fill"></i>
-                </button>
-              </form>
+                @Html.DisplayFor(modelItem => item.Name)
             </td>
-          </tr>
-        }
-      </tbody>
-    </table>
-  }
-</div>
-
-<div class="modal fade" id="create-doctor" tabindex="-1" aria-labelledby="createDoctorLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <form asp-action="Create" method="post">
-        <div class="modal-header">
-          <h5 class="modal-title" id="createDoctorLabel">Dodaj lekarza</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Zamknij"></button>
-        </div>
-        <div class="modal-body">
-          <div class="mb-3">
-            <label for="Name" class="form-label">Imię</label>
-            <input type="text" class="form-control" id="Name" name="Name" required>
-          </div>
-          <div class="mb-3">
-            <label for="LastName" class="form-label">Nazwisko</label>
-            <input type="text" class="form-control" id="LastName" name="LastName" required>
-          </div>
-          <div class="mb-3">
-            <label for="Email" class="form-label">Email</label>
-            <input type="email" class="form-control" id="Email" name="Email" required>
-          </div>
-          <div class="mb-3">
-            <label for="SpecializationId" class="form-label">Specjalizacja</label>
-            <select class="form-select" id="SpecializationId" name="SpecializationId" required>
-              @foreach (var spec in Model.Specializations)
-              {
-                <option value="@spec.Id">@spec.Name</option>
-              }
-            </select>
-          </div>
-          <div class="mb-3">
-            <label for="DateOfBirth" class="form-label">Data urodzenia</label>
-            <input type="date" class="form-control" id="DateOfBirth" name="DateOfBirth" required>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zamknij</button>
-          <button type="submit" class="btn btn-success">Zapisz</button>
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Specialization.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateOfBirth)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
