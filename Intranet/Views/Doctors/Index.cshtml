@@ -1,15 +1,6 @@
+@model DoctorIndexViewModel
 @{
   ViewData["Title"] = "Lekarze";
-
-  var tempDoctors = new List<(int Id, string Name, string LastName, string Date, string Address, string PhoneNumber)>
-  {
-      (1, "Krzysztof", "Zjadek", "Poniedziałek - Piątek, 8:00 - 16:00", "Nad Reglami 23, Zakopane", "+48 123 456 789"),
-      (2, "Karina", "Wojska", "Poniedziałek - Czwartek, 8:00 - 12:00", "Nad Reglami 23, Zakopane", "+48 123 456 789"),
-      (3, "Karol", "Poss", "Wtorek - Piątek, 12:00 - 19:00", "Nad Reglami 23, Zakopane", "+48 123 456 789"),
-      (4, "Karol", "Wojteka", "Poniedziałek - Piątek, 9:30 - 15:00", "Nad Reglami 23, Zakopane", "+48 123 456 789"),
-      (5, "Magdalena", "Kowalska", "Środa - Piątek, 8:30 - 19:00", "Nad Reglami 23, Zakopane", "+48 123 456 789"),
-      (6, "Szymon", "Szczepała", "Czwartek - Piątek, 8:00 - 19:00", "Nad Reglami 23, Zakopane", "+48 123 456 789")
-  };
 }
 
 <div class="container-fluid py-5">
@@ -18,72 +9,91 @@
     <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#create-doctor">Dodaj lekarza</button>
   </div>
 
-  <div class="modal fade" id="create-doctor" tabindex="-1" aria-labelledby="createDoctorLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <form>
-          <div class="modal-header">
-            <h5 class="modal-title" id="createDoctorLabel">Dodaj lekarza</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Zamknij"></button>
+  @if (!Model.Doctors.Any()) {
+    <p>Nie ma lekarzy</p>
+  }
+  else
+  {
+    <table class="table table-striped my-4">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Imię</th>
+          <th scope="col">Nazwisko</th>
+          <th scope="col">Email</th>
+          <th scope="col">Specjalizacja</th>
+          <th scope="col">Data urodzenia</th>
+          <th scope="col">Akcje</th>
+        </tr>
+      </thead>
+      <tbody>
+        @foreach (var doctor in Model.Doctors)
+        {
+          <tr>
+            <th scope="row">@doctor.Id</th>
+            <td>@doctor.Name</td>
+            <td>@doctor.LastName</td>
+            <td>@doctor.Email</td>
+            <td>@doctor.Specialization.Name</td>
+            <td>@doctor.DateOfBirth.ToString("yyyy-MM-dd")</td>
+            <td>
+              <a asp-action="Edit" asp-route-id="@doctor.Id" class="btn btn-outline-primary btn-sm me-1" title="Edytuj">
+                <i class="bi bi-pencil-square"></i>
+              </a>
+              <form asp-action="Delete" method="post" asp-route-id="@doctor.Id" class="d-inline">
+                <button type="submit" class="btn btn-outline-danger btn-sm me-1" title="Usuń" onclick="return confirm('Na pewno chcesz usunąć lekarza?');">
+                  <i class="bi bi-trash-fill"></i>
+                </button>
+              </form>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  }
+</div>
+
+<div class="modal fade" id="create-doctor" tabindex="-1" aria-labelledby="createDoctorLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form asp-action="Create" method="post">
+        <div class="modal-header">
+          <h5 class="modal-title" id="createDoctorLabel">Dodaj lekarza</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Zamknij"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="Name" class="form-label">Imię</label>
+            <input type="text" class="form-control" id="Name" name="Name" required>
           </div>
-          <div class="modal-body">
-            <div class="mb-3">
-              <label for="firstName" class="form-label">Imię</label>
-              <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Wprowadź imię" required>
-            </div>
-            <div class="mb-3">
-              <label for="lastName" class="form-label">Nazwisko</label>
-              <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Wprowadź nazwisko" required>
-            </div>
-            <div class="mb-3">
-              <label for="birthDate" class="form-label">Data urodzenia</label>
-              <input type="date" class="form-control" id="birthDate" name="birthDate" required>
-            </div>
+          <div class="mb-3">
+            <label for="LastName" class="form-label">Nazwisko</label>
+            <input type="text" class="form-control" id="LastName" name="LastName" required>
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zamknij</button>
-            <button type="submit" class="btn btn-success">Zapisz</button>
+          <div class="mb-3">
+            <label for="Email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="Email" name="Email" required>
           </div>
-        </form>
-      </div>
+          <div class="mb-3">
+            <label for="SpecializationId" class="form-label">Specjalizacja</label>
+            <select class="form-select" id="SpecializationId" name="SpecializationId" required>
+              <option value="">-- wybierz --</option>
+              @foreach (var spec in Model.Specializations)
+              {
+                <option value="@spec.Id">@spec.Name</option>
+              }
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="DateOfBirth" class="form-label">Data urodzenia</label>
+            <input type="date" class="form-control" id="DateOfBirth" name="DateOfBirth" required>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zamknij</button>
+          <button type="submit" class="btn btn-success">Zapisz</button>
+        </div>
+      </form>
     </div>
   </div>
-
-  <table class="table table-striped my-4">
-    <thead>
-      <tr>
-        <th scope="col">ID</th>
-        <th scope="col">Imię</th>
-        <th scope="col">Nazwisko</th>
-        <th scope="col">Przyjęcia</th>
-        <th scope="col">Adres zamieszkania</th>
-        <th scope="col">Numer telefonu</th>
-        <th scope="col">Akcje</th>
-      </tr>
-    </thead>
-    <tbody>
-      @foreach (var doctor in @tempDoctors)
-      {
-        <tr>
-          <th scope="row">@doctor.Id</th>
-          <th scope="row">@doctor.Name</th>
-          <th scope="row">@doctor.LastName</th>
-          <th scope="row">@doctor.Date</th>
-          <th scope="row">@doctor.Address</th>
-          <th scope="row">@doctor.PhoneNumber</th>
-          <th>
-            <a href="#" class="btn btn-outline-primary btn-sm me-1" title="Edytuj">
-              <i class="bi bi-pencil-square"></i>
-            </a>
-            <a href="#" class="btn btn-outline-danger btn-sm me-1" title="Usuń">
-              <i class="bi bi-trash-fill"></i>
-            </a>
-            <a href="/doctors/show/@doctor.Id" class="btn btn-outline-secondary btn-sm" title="Zobacz">
-              <i class="bi bi-eye-fill"></i>
-            </a>
-          </th>
-        </tr>
-      }
-    </tbody>
-  </table>
 </div>
