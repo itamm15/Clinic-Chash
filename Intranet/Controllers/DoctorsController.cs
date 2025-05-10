@@ -22,4 +22,13 @@ public class DoctorsController : Controller
     ViewData["Id"] = Id;
     return View();
   }
+
+  [HttpPost]
+  public IActionResult Create(Doctor doctor)
+  {
+    Console.WriteLine(doctor);
+    _context.Doctors.Add(doctor);
+    _context.SaveChanges();
+    return RedirectToAction("Index");
+  }
 }

@@ -77,7 +77,6 @@
           <div class="mb-3">
             <label for="SpecializationId" class="form-label">Specjalizacja</label>
             <select class="form-select" id="SpecializationId" name="SpecializationId" required>
-              <option value="">-- wybierz --</option>
               @foreach (var spec in Model.Specializations)
               {
                 <option value="@spec.Id">@spec.Name</option>
