@@ -24,5 +24,6 @@ public class Doctor
 
   [Required]
   [DataType(DataType.Date)]
+  [Column(TypeName = "date")]
   public DateTime DateOfBirth { get; set; }
 }
