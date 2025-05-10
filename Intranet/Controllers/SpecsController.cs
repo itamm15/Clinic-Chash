@@ -20,4 +20,15 @@ public class SpecsController : Controller
     _context.SaveChanges();
     return RedirectToAction("Index");
   }
+
+  [HttpPost]
+  public IActionResult Delete(int id)
+  {
+    var specialization = _context.Specializations.Find(id);
+    if (specialization == null) return NotFound();
+
+    _context.Specializations.Remove(specialization);
+    _context.SaveChanges();
+    return RedirectToAction("Index");
+  }
 }
