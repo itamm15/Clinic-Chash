@@ -11,4 +11,13 @@ public class SpecsController : Controller
     var specs = _context.Specializations.ToList();
     return View(specs);
   }
+
+  [HttpPost]
+  public IActionResult Create(Specialization specialization)
+  {
+    Console.Write(specialization);
+    _context.Specializations.Add(specialization);
+    _context.SaveChanges();
+    return RedirectToAction("Index");
+  }
 }
