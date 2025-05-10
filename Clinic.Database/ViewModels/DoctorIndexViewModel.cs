@@ -1,3 +1,5 @@
+using Clinic.Database;
+
 public class DoctorIndexViewModel
 {
   public List<Doctor> Doctors { get; set; }
