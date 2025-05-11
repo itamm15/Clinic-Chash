@@ -1,36 +1,28 @@
 @model Clinic.Database.Examination
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Szczegóły badania";
 }
 
-<h1>Details</h1>
+<div class="container-fluid py-5" style="width: 500px">
+    <h3 class="mb-4">Szczegóły badania</h3>
 
-<div>
-    <h4>Examination</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Doctor)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Doctor.Email)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <div class="mb-3">
+        <label class="form-label">Nazwa</label>
+        <input class="form-control" value="@Model.Name" readonly />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Opis</label>
+        <input class="form-control" value="@Model.Description" readonly />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Lekarz prowadzący</label>
+        <input class="form-control" value="@($"{Model.Doctor.Name} {Model.Doctor.LastName}")" readonly />
+    </div>
+
+    <div class="modal-footer">
+        <a asp-action="Index" class="btn btn-secondary m-2">Powrót</a>
+    </div>
 </div>

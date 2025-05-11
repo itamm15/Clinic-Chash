@@ -47,7 +47,13 @@ namespace Intranet.Controllers
         // GET: Examinations/Create
         public IActionResult Create()
         {
-            ViewData["DoctorId"] = new SelectList(_context.Doctors, "Id", "Email");
+            ViewBag.DoctorId = _context.Doctors
+                        .Select(d => new SelectListItem
+                        {
+                            Value = d.Id.ToString(),
+                            Text = d.Name + " " + d.LastName
+                        })
+                        .ToList();
             return View();
         }
 
@@ -81,7 +87,13 @@ namespace Intranet.Controllers
             {
                 return NotFound();
             }
-            ViewData["DoctorId"] = new SelectList(_context.Doctors, "Id", "Email", examination.DoctorId);
+                        ViewBag.DoctorId = _context.Doctors
+                        .Select(d => new SelectListItem
+                        {
+                            Value = d.Id.ToString(),
+                            Text = d.Name + " " + d.LastName
+                        })
+                        .ToList();
             return View(examination);
         }
 
