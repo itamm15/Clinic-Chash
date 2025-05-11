@@ -1,7 +1,9 @@
 using System.ComponentModel.DataAnnotations;
 using Clinic.Database;
 
-public class Examination
+namespace Clinic.Database
+{
+ public class Examination
 {
     [Key]
     public int Id { get; set; }
@@ -16,4 +18,6 @@ public class Examination
     [Required]
     public int DoctorId { get; set; }
     public Doctor? Doctor { get; set; }
+}
+
 }
