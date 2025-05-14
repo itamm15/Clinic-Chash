@@ -1,0 +1,45 @@
+@model IEnumerable<Clinic.Database.Document>
+
+@{
+    ViewData["Title"] = "Dokumenty";
+}
+
+<p>
+    <div class="d-flex justify-content-between">
+        <h3>Dokumenty</h3>
+        <a asp-action="Create" class="btn btn-success">Dodaj dokument</a>
+    </div>
+</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Tytuł</th>
+            <th>Opis</th>
+            <th>Data utworzenia</th>
+            <th>Akcje</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.Title)</td>
+            <td>@Html.DisplayFor(modelItem => item.Description)</td>
+            <td>@item.CreatedAt.ToString("yyyy-MM-dd")</td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-outline-primary btn-sm me-1" title="Edytuj">
+                    <i class="bi bi-pencil-square"></i>
+                </a>
+                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-outline-primary btn-sm me-1" title="Zobacz">
+                    <i class="bi bi-eye-fill"></i>
+                </a>
+                <form asp-action="Delete" method="post" asp-route-id="@item.Id" class="d-inline">
+                    <button type="submit" class="btn btn-outline-danger btn-sm me-1" title="Usuń" onclick="return confirm('Na pewno chcesz usunąć ten dokument?');">
+                        <i class="bi bi-trash-fill"></i>
+                    </button>
+                </form>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,28 @@
+@model Clinic.Database.Document
+
+@{
+    ViewData["Title"] = "Szczegóły dokumentu";
+}
+
+<div class="container-fluid py-5" style="width: 500px">
+    <h3 class="mb-4">Szczegóły dokumentu</h3>
+
+    <div class="mb-3">
+        <label class="form-label">Tytuł</label>
+        <input class="form-control" value="@Model.Title" readonly />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Opis</label>
+        <input class="form-control" value="@Model.Description" readonly />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Data utworzenia</label>
+        <input class="form-control" value="@Model.CreatedAt.ToString("yyyy-MM-dd")" readonly />
+    </div>
+
+    <div class="modal-footer">
+        <a asp-action="Index" class="btn btn-secondary m-2">Powrót</a>
+    </div>
+</div>
