@@ -48,8 +48,22 @@ namespace Intranet.Controllers
         // GET: Visits/Create
         public IActionResult Create()
         {
-            ViewData["DoctorId"] = new SelectList(_context.Doctors, "Id", "Email");
-            ViewData["PatientId"] = new SelectList(_context.Patients, "Id", "Address");
+            ViewData["DoctorId"] = _context.Doctors
+                .Select(d => new SelectListItem
+                {
+                    Value = d.Id.ToString(),
+                    Text = $"{d.Name} {d.LastName}"
+                })
+                .ToList();
+
+            ViewData["PatientId"] = _context.Patients
+                .Select(p => new SelectListItem
+                {
+                    Value = p.Id.ToString(),
+                    Text = $"{p.FirstName} {p.LastName}"
+                })
+                .ToList();
+
             return View();
         }
 
@@ -84,8 +98,23 @@ namespace Intranet.Controllers
             {
                 return NotFound();
             }
-            ViewData["DoctorId"] = new SelectList(_context.Doctors, "Id", "Email", visit.DoctorId);
-            ViewData["PatientId"] = new SelectList(_context.Patients, "Id", "Address", visit.PatientId);
+
+            ViewData["DoctorId"] = _context.Doctors
+                .Select(d => new SelectListItem
+                {
+                    Value = d.Id.ToString(),
+                    Text = $"{d.Name} {d.LastName}"
+                })
+                .ToList();
+
+            ViewData["PatientId"] = _context.Patients
+                .Select(p => new SelectListItem
+                {
+                    Value = p.Id.ToString(),
+                    Text = $"{p.FirstName} {p.LastName}"
+                })
+                .ToList();
+
             return View(visit);
         }
 
