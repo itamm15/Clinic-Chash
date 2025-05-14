@@ -2,8 +2,10 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-public class Payment
+namespace Clinic.Database
 {
+  public class Payment
+  {
     public int Id { get; set; }
 
     [Required]
@@ -21,4 +23,5 @@ public class Payment
     [Required]
     public int PatientId { get; set; }
     public Patient? Patient { get; set; }
+  }
 }

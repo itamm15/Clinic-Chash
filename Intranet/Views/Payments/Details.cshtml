@@ -1,0 +1,33 @@
+@model Clinic.Database.Payment
+
+@{
+    ViewData["Title"] = "Szczegóły płatności";
+}
+
+<div class="container-fluid py-5" style="width: 500px">
+    <h3 class="mb-4">Szczegóły płatności</h3>
+
+    <div class="mb-3">
+        <label class="form-label">Kwota</label>
+        <input class="form-control" value="@Model.Amount.ToString("C")" readonly />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Data płatności</label>
+        <input class="form-control" value="@Model.PaymentDate.ToString("yyyy-MM-dd")" readonly />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Opis</label>
+        <input class="form-control" value="@Model.Description" readonly />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Pacjent</label>
+        <input class="form-control" value="@Model.Patient.FirstName @Model.Patient.LastName" readonly />
+    </div>
+
+    <div class="modal-footer">
+        <a asp-action="Index" class="btn btn-secondary m-2">Powrót</a>
+    </div>
+</div>

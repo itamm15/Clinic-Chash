@@ -1,0 +1,47 @@
+@model Clinic.Database.Payment
+
+@{
+    ViewData["Title"] = "Edytuj płatność";
+}
+
+<div class="container-fluid py-5" style="width: 500px">
+    <h3 class="mb-4">Edytuj płatność</h3>
+
+    <form asp-action="Edit" method="post">
+        <input type="hidden" asp-for="Id" />
+        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+        <div class="mb-3">
+            <label asp-for="Amount" class="form-label">Kwota</label>
+            <input asp-for="Amount" class="form-control" required />
+            <span asp-validation-for="Amount" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="PaymentDate" class="form-label">Data płatności</label>
+            <input asp-for="PaymentDate" type="date" class="form-control" required />
+            <span asp-validation-for="PaymentDate" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Description" class="form-label">Opis</label>
+            <input asp-for="Description" class="form-control" />
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="PatientId" class="form-label">Pacjent</label>
+            <select asp-for="PatientId" class="form-control" asp-items="ViewBag.PatientId" required></select>
+            <span asp-validation-for="PatientId" class="text-danger"></span>
+        </div>
+
+        <div class="modal-footer">
+            <a asp-action="Index" class="btn btn-secondary m-2">Anuluj</a>
+            <button type="submit" class="btn btn-success">Zapisz</button>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
