@@ -10,6 +10,7 @@ namespace Clinic.Database
     public DbSet<Doctor> Doctors { get; set; }
     public DbSet<Examination> Examinations { get; set; }
     public DbSet<Visit> Visits { get; set; }
+    public DbSet<Prescription> Prescriptions { get; set; }
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
   }
 }
