@@ -26,10 +26,6 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = /Users/mateuszosinski/Desktop/clinic-chash/Intranet
 build_property._RazorSourceGeneratorDebug = 
 
-[/Users/mateuszosinski/Desktop/clinic-chash/Intranet/Views/Appointments/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXBwb2ludG1lbnRzL0luZGV4LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
 [/Users/mateuszosinski/Desktop/clinic-chash/Intranet/Views/Doctors/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRG9jdG9ycy9DcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -104,6 +100,26 @@ build_metadata.AdditionalFiles.CssScope =
 
 [/Users/mateuszosinski/Desktop/clinic-chash/Intranet/Views/Specs/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU3BlY3MvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mateuszosinski/Desktop/clinic-chash/Intranet/Views/Visits/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVmlzaXRzL0NyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mateuszosinski/Desktop/clinic-chash/Intranet/Views/Visits/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVmlzaXRzL0RlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mateuszosinski/Desktop/clinic-chash/Intranet/Views/Visits/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVmlzaXRzL0RldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mateuszosinski/Desktop/clinic-chash/Intranet/Views/Visits/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVmlzaXRzL0VkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mateuszosinski/Desktop/clinic-chash/Intranet/Views/Visits/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVmlzaXRzL0luZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/mateuszosinski/Desktop/clinic-chash/Intranet/Views/_ViewImports.cshtml]
