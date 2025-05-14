@@ -1,0 +1,53 @@
+@model IEnumerable<Clinic.Database.Prescription>
+
+@{
+    ViewData["Title"] = "Recepty";
+}
+
+<div class="container-fluid py-5">
+    <div class="d-flex justify-content-between">
+        <h3>Recepty</h3>
+        <a asp-action="Create" class="btn btn-success">Dodaj receptę</a>
+    </div>
+
+    @if (!Model.Any())
+    {
+        <p class="mt-4">Brak zapisanych recept.</p>
+    }
+    else
+    {
+        <table class="table table-striped mt-4">
+            <thead>
+                <tr>
+                    <th>Opis</th>
+                    <th>Pacjent</th>
+                    <th>Lekarz</th>
+                    <th>Akcje</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.Description)</td>
+                        <td>@item.Patient.FirstName @item.Patient.LastName</td>
+                        <td>@item.Doctor.Name @item.Doctor.LastName</td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-outline-primary btn-sm me-1" title="Edytuj">
+                                <i class="bi bi-pencil-square"></i>
+                            </a>
+                            <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-outline-primary btn-sm me-1" title="Zobacz">
+                                <i class="bi bi-eye-fill"></i>
+                            </a>
+                            <form asp-action="Delete" method="post" asp-route-id="@item.Id" class="d-inline">
+                                <button type="submit" class="btn btn-outline-danger btn-sm me-1" title="Usuń" onclick="return confirm('Na pewno chcesz usunąć receptę?');">
+                                    <i class="bi bi-trash-fill"></i>
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</div>

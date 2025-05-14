@@ -1,0 +1,28 @@
+@model Clinic.Database.Prescription
+
+@{
+    ViewData["Title"] = "Szczegóły recepty";
+}
+
+<div class="container-fluid py-5" style="max-width: 500px">
+    <h3 class="mb-4">Szczegóły recepty</h3>
+
+    <div class="mb-3">
+        <label class="form-label">Opis recepty</label>
+        <input class="form-control" value="@Model.Description" readonly />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Pacjent</label>
+        <input class="form-control" value="@($"{Model.Patient.FirstName} {Model.Patient.LastName}")" readonly />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Lekarz</label>
+        <input class="form-control" value="@($"{Model.Doctor.Name} {Model.Doctor.LastName}")" readonly />
+    </div>
+
+    <div class="modal-footer">
+        <a asp-action="Index" class="btn btn-secondary m-2">Powrót</a>
+    </div>
+</div>

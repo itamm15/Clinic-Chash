@@ -1,0 +1,41 @@
+@model Clinic.Database.Prescription
+
+@{
+    ViewData["Title"] = "Edytuj receptę";
+}
+
+<div class="container-fluid py-5" style="max-width: 500px;">
+    <h3 class="mb-4">Edytuj receptę</h3>
+
+    <form asp-action="Edit" method="post">
+        <input type="hidden" asp-for="Id" />
+        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+        <div class="mb-3">
+            <label asp-for="Description" class="form-label">Opis recepty</label>
+            <input asp-for="Description" class="form-control" required />
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="PatientId" class="form-label">Pacjent</label>
+            <select asp-for="PatientId" class="form-select" asp-items="ViewBag.PatientId" required></select>
+            <span asp-validation-for="PatientId" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="DoctorId" class="form-label">Lekarz</label>
+            <select asp-for="DoctorId" class="form-select" asp-items="ViewBag.DoctorId" required></select>
+            <span asp-validation-for="DoctorId" class="text-danger"></span>
+        </div>
+
+        <div class="modal-footer">
+            <a asp-action="Index" class="btn btn-secondary m-2">Anuluj</a>
+            <button type="submit" class="btn btn-success">Zapisz</button>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
