@@ -36,7 +36,6 @@
         <tr>
             <th>Data wizyty</th>
             <th>Powód</th>
-            <th>Pacjent</th>
             <th>Lekarz</th>
         </tr>
     </thead>
@@ -45,7 +44,6 @@
         <tr>
             <td>@visit.VisitDate</td>
             <td>@visit.VisitReason</td>
-            <td>@visit.Patient?.LastName @visit.Patient?.FirstName</td>
             <td>@visit.Doctor?.LastName @visit.Doctor?.Name</td>
         </tr>
       }
@@ -57,7 +55,6 @@
       <thead>
           <tr>
               <th>Opis</th>
-              <th>Pacjent</th>
               <th>Lekarz</th>
           </tr>
       </thead>
@@ -65,7 +62,6 @@
         @foreach(var prescription in @Model.Prescriptions) {
           <tr>
               <td>@prescription.Description</td>
-              <td>@prescription.Patient?.LastName @prescription.Patient?.FirstName</td>
               <td>@prescription.Doctor?.LastName @prescription.Doctor?.Name</td>
           </tr>
         }

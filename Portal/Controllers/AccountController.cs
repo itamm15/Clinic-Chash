@@ -15,8 +15,8 @@ public class AccountController : Controller
 
   public IActionResult Index()
   {
-    var visits = _context.Visits.Include(v => v.Doctor).Include(v => v.Patient).ToList();
-    var prescriptions = _context.Prescriptions.Include(p => p.Doctor).Include(p => p.Patient).ToList();
+    var visits = _context.Visits.Include(v => v.Doctor).ToList();
+    var prescriptions = _context.Prescriptions.Include(p => p.Doctor).ToList();
     var payments = _context.Payments.ToList();
 
     var accountModel = new AccountViewModel
