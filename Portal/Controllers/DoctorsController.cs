@@ -31,7 +31,7 @@ public class DoctorsController : Controller
         {
           Name = d.Name + " " + d.LastName,
           Specialization = d.Specialization.Name,
-          Icon = icons[d.Specialization.Name],
+          Icon = icons.ContainsKey(d.Specialization.Name) ? icons[d.Specialization.Name] : "bi bi-patch-question-fill",
           Email = d.Email
         }).ToList();
 
