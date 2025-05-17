@@ -1,5 +1,28 @@
+@model List<ServiceViewModel>
+
 @{
-  ViewData["Title"] = "Uslugi";
+    ViewData["Title"] = "Badania lekarskie";
 }
 
-Tutaj beda uslugi
+<div class="container py-5">
+  <h3 class="text-center mb-4">Dostępne badania w przychodni Świtałka</h3>
+
+  <div class="row gy-4 justify-content-center">
+    @foreach (var service in @Model)
+    {
+      <div class="col-md-6">
+        <div class="card bg-success text-white shadow-sm">
+          <div class="card-body p-4">
+            <h4 class="card-title">@service.Name</h4>
+            <p class="card-text mb-2">@service.Description</p>
+
+            <div class="d-flex align-items-center mt-3">
+              <i class="bi bi-person-vcard me-2"></i>
+              <span>Lekarz: Dr. @service.DoctorName</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</div>
