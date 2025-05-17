@@ -1,4 +1,5 @@
-﻿@{
+﻿@model List<PortalHomeViewModel>
+@{
     ViewData["Title"] = "Strona glowna";
 
     var cards = new List<(string Icon, string Title, string Description)>
@@ -36,4 +37,26 @@
   </div>
 </div>
 
-@Html.Partial("_ServiceCard")
+<div class="container py-5">
+  <h3 class="text-center mb-4">
+    Znajdziesz u nas specjalistów z różnych specjalizacji, takich jak:
+  </h3>
+
+  <div class="row g-4 justify-content-center">
+
+  @foreach (var spec in @Model)
+  {
+    <div class="col-12 col-md-6 col-lg-4">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">
+            <i class="@spec.Icon"></i> @spec.Name
+          </h5>
+          <p class="card-text">
+            @spec.Description
+          </p>
+        </div>
+      </div>
+    </div>
+  }
+</div>
