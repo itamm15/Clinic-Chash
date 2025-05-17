@@ -28,6 +28,7 @@
       <a href="/accountEdit" class="btn btn-success d-flex mx-auto mt-3">Edytuj profil</a>
     </div>
   </div>
+
   <div class="m-5 mt-0" style="width: 800px">
     <h2>Wizyty:</h2>
     <table class="table table-striped">
@@ -66,6 +67,27 @@
               <td>@prescription.Description</td>
               <td>@prescription.Patient?.LastName @prescription.Patient?.FirstName</td>
               <td>@prescription.Doctor?.LastName @prescription.Doctor?.Name</td>
+          </tr>
+        }
+      </table>
+    </div>
+
+    <div class="mt-5">
+      <h2>Platności:</h2>
+      <table class="table table-striped">
+      <thead>
+          <tr>
+              <th>Kwota</th>
+              <th>Opis</th>
+              <th>Data</th>
+          </tr>
+      </thead>
+      <tbody>
+        @foreach(var payment in @Model.Payments) {
+          <tr>
+              <td>@payment.Amount</td>
+              <td>@payment.Description</td>
+              <td>@payment.PaymentDate</td>
           </tr>
         }
       </table>

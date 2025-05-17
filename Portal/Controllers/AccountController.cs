@@ -17,11 +17,13 @@ public class AccountController : Controller
   {
     var visits = _context.Visits.Include(v => v.Doctor).Include(v => v.Patient).ToList();
     var prescriptions = _context.Prescriptions.Include(p => p.Doctor).Include(p => p.Patient).ToList();
+    var payments = _context.Payments.ToList();
 
     var accountModel = new AccountViewModel
     {
       Visits = visits,
-      Prescriptions = prescriptions
+      Prescriptions = prescriptions,
+      Payments = payments
     };
 
     return View(accountModel);
