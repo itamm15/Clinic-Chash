@@ -30,63 +30,77 @@
   </div>
 
   <div class="m-5 mt-0" style="width: 800px">
-    <h2>Wizyty:</h2>
-    <table class="table table-striped">
-    <thead>
-        <tr>
-            <th>Data wizyty</th>
-            <th>Powód</th>
-            <th>Lekarz</th>
-        </tr>
-    </thead>
-    <tbody>
-      @foreach(var visit in @Model.Visits) {
-        <tr>
-            <td>@visit.VisitDate</td>
-            <td>@visit.VisitReason</td>
-            <td>@visit.Doctor?.LastName @visit.Doctor?.Name</td>
-        </tr>
-      }
-    </table>
 
-    <div class="mt-5">
-      <h2>Recepty:</h2>
-      <table class="table table-striped">
-      <thead>
-          <tr>
-              <th>Opis</th>
-              <th>Lekarz</th>
-          </tr>
-      </thead>
-      <tbody>
-        @foreach(var prescription in @Model.Prescriptions) {
-          <tr>
-              <td>@prescription.Description</td>
-              <td>@prescription.Doctor?.LastName @prescription.Doctor?.Name</td>
-          </tr>
-        }
-      </table>
-    </div>
+    <ul class="nav nav-tabs" id="useraccount" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="wizyty-tab" data-bs-toggle="tab" data-bs-target="#wizyty" type="button" role="tab" aria-controls="wizyty" aria-selected="true">Wizyty</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="recepty-tab" data-bs-toggle="tab" data-bs-target="#recepty" type="button" role="tab" aria-controls="recepty" aria-selected="false">Recepty</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="platnosc-tab" data-bs-toggle="tab" data-bs-target="#platnosc" type="button" role="tab" aria-controls="platnosc" aria-selected="false">Platności</button>
+      </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
 
-    <div class="mt-5">
-      <h2>Platności:</h2>
-      <table class="table table-striped">
-      <thead>
-          <tr>
-              <th>Kwota</th>
-              <th>Opis</th>
-              <th>Data</th>
-          </tr>
-      </thead>
-      <tbody>
-        @foreach(var payment in @Model.Payments) {
-          <tr>
-              <td>@payment.Amount</td>
-              <td>@payment.Description</td>
-              <td>@payment.PaymentDate</td>
-          </tr>
-        }
-      </table>
+      <div class="tab-pane fade show active" id="wizyty" role="tabpanel" aria-labelledby="home-tab">
+        <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Data wizyty</th>
+                <th>Powód</th>
+                <th>Lekarz</th>
+            </tr>
+        </thead>
+        <tbody>
+          @foreach(var visit in @Model.Visits) {
+            <tr>
+                <td>@visit.VisitDate</td>
+                <td>@visit.VisitReason</td>
+                <td>@visit.Doctor?.LastName @visit.Doctor?.Name</td>
+            </tr>
+          }
+        </table>
+      </div>
+
+      <div class="tab-pane fade" id="recepty" role="tabpanel" aria-labelledby="recepty-tab">
+        <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Opis</th>
+                <th>Lekarz</th>
+            </tr>
+        </thead>
+        <tbody>
+          @foreach(var prescription in @Model.Prescriptions) {
+            <tr>
+                <td>@prescription.Description</td>
+                <td>@prescription.Doctor?.LastName @prescription.Doctor?.Name</td>
+            </tr>
+          }
+        </table>
+      </div>
+
+      <div class="tab-pane fade" id="platnosc" role="tabpanel" aria-labelledby="platnosc-tab">
+        <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Kwota</th>
+                <th>Opis</th>
+                <th>Data</th>
+            </tr>
+        </thead>
+        <tbody>
+          @foreach(var payment in @Model.Payments) {
+            <tr>
+                <td>@payment.Amount</td>
+                <td>@payment.Description</td>
+                <td>@payment.PaymentDate</td>
+            </tr>
+          }
+        </table>
+      </div>
     </div>
   </div>
 </div>
