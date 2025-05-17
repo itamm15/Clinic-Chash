@@ -1,62 +1,50 @@
 @model Clinic.Database.Doctor
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Dodaj lekarza";
 }
 
-<h1>Create</h1>
+<div class="container-fluid py-5" style="width: 500px">
+    <h3 class="mb-4">Dodaj nowego lekarza</h3>
 
-@if (!ViewData.ModelState.IsValid)
-{
-    <div class="alert alert-danger">
-        <ul>
-            @foreach (var modelError in ViewData.ModelState.Values.SelectMany(v => v.Errors))
-            {
-                <li>@modelError.ErrorMessage</li>
-            }
-        </ul>
-    </div>
-}
+    <form asp-action="Create" method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
 
-<h4>Doctor</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="LastName" class="control-label"></label>
-                <input asp-for="LastName" class="form-control" />
-                <span asp-validation-for="LastName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="SpecializationId" class="control-label"></label>
-                <select asp-for="SpecializationId" class ="form-control" asp-items="ViewBag.SpecializationId"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
-                <span asp-validation-for="Email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DateOfBirth" class="control-label"></label>
-                <input asp-for="DateOfBirth" type="date" class="form-control" />
-                <span asp-validation-for="DateOfBirth" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
+        <div class="mb-3">
+            <label asp-for="Name" class="form-label">Imię</label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+        <div class="mb-3">
+            <label asp-for="LastName" class="form-label">Nazwisko</label>
+            <input asp-for="LastName" class="form-control" />
+            <span asp-validation-for="LastName" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="SpecializationId" class="form-label">Specjalizacja</label>
+            <select asp-for="SpecializationId" class="form-control" asp-items="ViewBag.SpecializationId"></select>
+            <span asp-validation-for="SpecializationId" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Email" class="form-label">Email</label>
+            <input asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="DateOfBirth" class="form-label">Data urodzenia</label>
+            <input asp-for="DateOfBirth" type="date" class="form-control" />
+            <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+        </div>
+
+        <div class="modal-footer">
+            <a asp-action="Index" class="btn btn-secondary m-2">Anuluj</a>
+            <button type="submit" class="btn btn-success">Zapisz</button>
+        </div>
+    </form>
 </div>
 
 @section Scripts {
