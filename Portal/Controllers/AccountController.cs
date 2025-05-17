@@ -16,10 +16,12 @@ public class AccountController : Controller
   public IActionResult Index()
   {
     var visits = _context.Visits.Include(v => v.Doctor).Include(v => v.Patient).ToList();
+    var prescriptions = _context.Prescriptions.Include(p => p.Doctor).Include(p => p.Patient).ToList();
 
     var accountModel = new AccountViewModel
     {
-      Visits = visits
+      Visits = visits,
+      Prescriptions = prescriptions
     };
 
     return View(accountModel);

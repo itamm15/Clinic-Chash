@@ -49,5 +49,26 @@
         </tr>
       }
     </table>
+
+    <div class="mt-5">
+      <h2>Recepty:</h2>
+      <table class="table table-striped">
+      <thead>
+          <tr>
+              <th>Opis</th>
+              <th>Pacjent</th>
+              <th>Lekarz</th>
+          </tr>
+      </thead>
+      <tbody>
+        @foreach(var prescription in @Model.Prescriptions) {
+          <tr>
+              <td>@prescription.Description</td>
+              <td>@prescription.Patient?.LastName @prescription.Patient?.FirstName</td>
+              <td>@prescription.Doctor?.LastName @prescription.Doctor?.Name</td>
+          </tr>
+        }
+      </table>
+    </div>
   </div>
 </div>
