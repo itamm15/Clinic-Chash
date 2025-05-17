@@ -41,8 +41,8 @@ public class HomeController : Controller
         var specs = _context.Specializations.Select(s => new PortalHomeViewModel
         {
             Name = s.Name,
-            Description = texts[s.Name],
-            Icon = icons[s.Name]
+            Description = texts.ContainsKey(s.Name) ? texts[s.Name] : "Brak opisu.",
+            Icon = icons.ContainsKey(s.Name) ? icons[s.Name] : "bi bi-patch-question-fill"
         }).ToList();
 
         return View(specs);
