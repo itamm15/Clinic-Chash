@@ -1,0 +1,40 @@
+@model Patient
+@{
+  ViewData["Title"] = "Modyfikuj pacjenta";
+}
+
+<div class="container-fluid py-5" style="width: 500px">
+  <form asp-action="Update" method="post">
+    <input type="hidden" asp-for="Id" />
+
+    <div class="mb-3">
+      <label asp-for="FirstName" class="form-label"></label>
+      <input asp-for="FirstName" class="form-control" disabled />
+    </div>
+
+    <div class="mb-3">
+      <label asp-for="LastName" class="form-label"></label>
+      <input asp-for="LastName" class="form-control" disabled />
+    </div>
+
+    <div class="mb-3">
+      <label asp-for="Address" class="form-label"></label>
+      <input asp-for="Address" class="form-control" disabled />
+    </div>
+
+    <div class="mb-3">
+      <label asp-for="Email" class="form-label"></label>
+      <input asp-for="Email" class="form-control" disabled />
+    </div>
+
+    <div class="mb-3">
+      <label asp-for="PhoneNumber" class="form-label"></label>
+      <input asp-for="PhoneNumber" class="form-control" disabled />
+    </div>
+
+    <div class="mb-3">
+      <label asp-for="DateOfBirth" class="form-label"></label>
+      <input asp-for="DateOfBirth" type="date" class="form-control" disabled />
+    </div>
+  </form>
+</div>
