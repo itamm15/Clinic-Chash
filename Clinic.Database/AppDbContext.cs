@@ -13,6 +13,7 @@ namespace Clinic.Database
     public DbSet<Prescription> Prescriptions { get; set; }
     public DbSet<Payment> Payments { get; set; }
     public DbSet<Document> Documents { get; set; }
+    public DbSet<Text> Texts { get; set; }
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
   }
 }
