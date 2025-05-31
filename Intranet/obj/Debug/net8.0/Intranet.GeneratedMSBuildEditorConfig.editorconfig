@@ -162,6 +162,26 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU3BlY3MvSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/mateuszosinski/Desktop/clinic-chash/Intranet/Views/Text/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVGV4dC9DcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mateuszosinski/Desktop/clinic-chash/Intranet/Views/Text/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVGV4dC9EZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mateuszosinski/Desktop/clinic-chash/Intranet/Views/Text/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVGV4dC9EZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mateuszosinski/Desktop/clinic-chash/Intranet/Views/Text/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVGV4dC9FZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mateuszosinski/Desktop/clinic-chash/Intranet/Views/Text/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVGV4dC9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/mateuszosinski/Desktop/clinic-chash/Intranet/Views/Visits/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVmlzaXRzL0NyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
