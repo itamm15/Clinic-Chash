@@ -18,6 +18,8 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
+        var texts = _context.Texts.ToList();
+
         var icons = new Dictionary<string, string>
         {
             ["Kardiolog"] = "bi bi-heart-pulse",
@@ -28,13 +30,19 @@ public class HomeController : Controller
             ["Pediatra"] = "bi bi-balloon"
         };
 
-        var specs = _context.Specializations.Select(s => new PortalHomeViewModel
+        var specs = _context.Specializations.Select(s => new PortalHomeSpecsViewModel
         {
             Name = s.Name,
             Icon = icons.ContainsKey(s.Name) ? icons[s.Name] : "bi bi-patch-question-fill"
         }).ToList();
 
-        return View(specs);
+        var viewModel = new PortalHomeViewModel
+        {
+            Texts = texts,
+            Specializations = specs
+        };
+
+        return View(viewModel);
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

@@ -1,12 +1,12 @@
-﻿@model List<PortalHomeViewModel>
+﻿@model PortalHomeViewModel
 @{
     ViewData["Title"] = "Strona glowna";
 
     var cards = new List<(string Icon, string Title, string Description)>
     {
-        ("bi bi-search me-2", "Znajdź specjalistę", "Wybierz spośród wielu dostępnych specjalistów i lekarzy. Przeglądaj opinie innych pacjentów i wybieraj!"),
-        ("bi bi-calendar-check-fill me-2", "Łatwo umów wizytę", "Wybierz odpowiadający Ci termin, podaj swoje dane i otrzymaj pełny dostęp do usług. Bardzo szybki i łatwy proces!"),
-        ("bi bi-clock-fill me-2", "Przyjdź na wizytę", "O wybranym terminie przypominimy Ci automatycznie za pomocą wiadomości SMS i mailem.")
+        ("bi bi-search me-2", @Model.Texts.FirstOrDefault(t => t.Key == "home_card_1_title").Content, @Model.Texts.FirstOrDefault(t => t.Key == "home_card_1_content").Content),
+        ("bi bi-calendar-check-fill me-2", @Model.Texts.FirstOrDefault(t => t.Key == "home_card_2_title").Content, @Model.Texts.FirstOrDefault(t => t.Key == "home_card_2_content").Content),
+        ("bi bi-clock-fill me-2", @Model.Texts.FirstOrDefault(t => t.Key == "home_card_3_title").Content, @Model.Texts.FirstOrDefault(t => t.Key == "home_card_3_content").Content)
     };
 }
 
@@ -39,12 +39,12 @@
 
 <div class="container py-5">
   <h3 class="text-center mb-4">
-    Znajdziesz u nas specjalistów z różnych specjalizacji, takich jak:
+     @Model.Texts.FirstOrDefault(t => t.Key == "home_specs_title").Content
   </h3>
 
   <div class="row g-4 justify-content-center">
 
-  @foreach (var spec in @Model)
+  @foreach (var spec in @Model.Specializations)
   {
     <div class="col-12 col-md-6 col-lg-3">
       <div class="card h-100 shadow-sm">
