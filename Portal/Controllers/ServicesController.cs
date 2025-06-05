@@ -15,6 +15,7 @@ public class ServicesController : Controller
 
   public IActionResult Index()
   {
+    ViewBag.Layout = GenerateLayout.GenerateLayoutViewModel(_context);
     var text = _context.Texts.ToList();
 
     var services = _context.Examinations

@@ -14,6 +14,7 @@ public class ContactController : Controller
 
   public IActionResult Index()
   {
+    ViewBag.Layout = GenerateLayout.GenerateLayoutViewModel(_context);
     var texts = _context.Texts.ToList();
     return View(texts);
   }

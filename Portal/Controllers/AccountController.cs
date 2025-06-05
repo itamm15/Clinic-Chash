@@ -15,6 +15,7 @@ public class AccountController : Controller
 
   public IActionResult Index()
   {
+    ViewBag.Layout = GenerateLayout.GenerateLayoutViewModel(_context);
     var texts = _context.Texts.ToList();
     var visits = _context.Visits.Include(v => v.Doctor).ToList();
     var prescriptions = _context.Prescriptions.Include(p => p.Doctor).ToList();
