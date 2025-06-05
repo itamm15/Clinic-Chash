@@ -23,7 +23,8 @@ public static class GenerateLayout
     {
       PageTitle = pageTitle,
       Links = links,
-      MyAccountText = myAccountText
+      MyAccountText = myAccountText,
+      Texts = texts
     };
   }
 }

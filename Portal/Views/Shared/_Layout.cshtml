@@ -3,6 +3,7 @@
     var menuItems = layout.Links;
     var title = layout.PageTitle;
     var myAccountText = layout.MyAccountText;
+    List<Clinic.Database.Text> texts = layout.Texts;
 }
 
 <!DOCTYPE html>
@@ -43,24 +44,24 @@
     <div class="container-fluid bg-body-tertiary pt-2 pb-3">
     <div class="row d-flex justify-content-center align-items-center">
         <div class="col text-center">
-        <h5>Lokalizacja:</h5>
+        <h5>@texts.FirstOrDefault(t => t.Key == "menu_loc_text").Content</h5>
         <div class="d-flex justify-content-center align-items-center">
             <i class="bi bi-pin-map-fill"></i>
-            <p class="ms-2 mb-0">Nad Reglami 23, 34-520 Zakopane</p>
+            <p class="ms-2 mb-0">@texts.FirstOrDefault(t => t.Key == "menu_loc_value").Content</p>
         </div>
         </div>
         <div class="col text-center">
-        <h5>Godziny otwarcia:</h5>
+        <h5>@texts.FirstOrDefault(t => t.Key == "menu_time_text").Content</h5>
         <div class="d-flex justify-content-center align-items-center">
             <i class="bi bi-clock"></i>
-            <p class="ms-2 mb-0">Poniedziałek - Piątek: 8:00 - 19:00</p>
+            <p class="ms-2 mb-0">@texts.FirstOrDefault(t => t.Key == "menu_time_value").Content</p>
         </div>
         </div>
         <div class="col text-center">
-        <h5>Numer kontaktowy:</h5>
+        <h5>@texts.FirstOrDefault(t => t.Key == "menu_phone_text").Content</h5>
         <div class="d-flex justify-content-center align-items-center">
             <i class="bi bi-telephone-fill" ></i>
-            <p class="ms-2 mb-0">+48 123 456 789</p>
+            <p class="ms-2 mb-0">@texts.FirstOrDefault(t => t.Key == "menu_phone_value").Content</p>
         </div>
         </div>
     </div>
