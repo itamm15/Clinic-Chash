@@ -15,6 +15,7 @@ public class AccountController : Controller
 
   public IActionResult Index()
   {
+    var texts = _context.Texts.ToList();
     var visits = _context.Visits.Include(v => v.Doctor).ToList();
     var prescriptions = _context.Prescriptions.Include(p => p.Doctor).ToList();
     var payments = _context.Payments.ToList();
@@ -23,7 +24,8 @@ public class AccountController : Controller
     {
       Visits = visits,
       Prescriptions = prescriptions,
-      Payments = payments
+      Payments = payments,
+      Texts = texts
     };
 
     return View(accountModel);
