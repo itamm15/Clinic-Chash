@@ -1,22 +1,23 @@
+@model List<Clinic.Database.Text>
 @{
     ViewData["Title"] = "Kontakt";
 }
 <div class="container my-5">
   <div class="row">
     <div class="col-md-6">
-      <h5 class="text-center">Wyślij wiadomość:</h5>
+      <h5 class="text-center">@Model.FirstOrDefault(t => t.Key == "contact_title").Content</h5>
       <form>
         <div class="mb-3">
-          <label for="email" class="form-label">Twój adres email:</label>
-          <input type="email" class="form-control" id="email" placeholder="Twój adres email" required>
+          <label for="email" class="form-label">@Model.FirstOrDefault(t => t.Key == "contact_email").Content</label>
+          <input type="email" class="form-control" id="email" placeholder="@Model.FirstOrDefault(t => t.Key == "contact_email_placeholder").Content" required>
         </div>
 
         <div class="mb-3">
-          <label for="message" class="form-label">Treść wiadomości:</label>
-          <textarea class="form-control" id="message" rows="6" placeholder="Treść wiadomości" required></textarea>
+          <label for="message" class="form-label">@Model.FirstOrDefault(t => t.Key == "contact_message").Content</label>
+          <textarea class="form-control" id="message" rows="6" placeholder="@Model.FirstOrDefault(t => t.Key == "contact_message_placeholder").Content" required></textarea>
         </div>
 
-        <button type="submit" class="btn btn-success">Wyślij</button>
+        <button type="submit" class="btn btn-success">@Model.FirstOrDefault(t => t.Key == "contact_send_button").Content</button>
       </form>
     </div>
     <div class="col-md-6">
