@@ -28,20 +28,9 @@ public class HomeController : Controller
             ["Pediatra"] = "bi bi-balloon"
         };
 
-        var texts = new Dictionary<string, string>
-        {
-            ["Kardiolog"] = "Specjalizacja zajmująca się diagnozowaniem i leczeniem chorób serca i układu krążenia.",
-            ["Neurolog"] = "Zajmuje się diagnozowaniem i leczeniem chorób układu nerwowego, takich jak udary, padaczka, czy stwardnienie rozsiane.",
-            ["Ortopeda"] = "Specjalizacja zajmująca się diagnozowaniem i leczeniem urazów, zaburzeń i chorób układu kostno-stawowego.",
-            ["Stomatolog"] = "Stomatologia to dziedzina medycyny zajmująca się zdrowiem jamy ustnej, zębów i przyzębia.",
-            ["Diabetolog"] = "Specjalizacja zajmująca się leczeniem cukrzycy i jej powikłań.",
-            ["Pediatra"] = "Koncentruje się na zdrowiu i leczeniu dzieci, od noworodków po młodzież."
-        };
-
         var specs = _context.Specializations.Select(s => new PortalHomeViewModel
         {
             Name = s.Name,
-            Description = texts.ContainsKey(s.Name) ? texts[s.Name] : "Brak opisu.",
             Icon = icons.ContainsKey(s.Name) ? icons[s.Name] : "bi bi-patch-question-fill"
         }).ToList();
 
