@@ -1,12 +1,8 @@
 ﻿@{
-    var menuItems = new List<(string Link, string Title)>
-    {
-        ("/", "STRONA GŁÓWNA"),
-        ("/aboutus", "O NAS"),
-        ("/doctors", "SPECJALIŚCI"),
-        ("/services", "USŁUGI"),
-        ("/contact", "KONTAKT")
-    };
+    var layout = ViewBag.Layout;
+    var menuItems = layout.Links;
+    var title = layout.PageTitle;
+    var myAccountText = layout.MyAccountText;
 }
 
 <!DOCTYPE html>
@@ -25,7 +21,7 @@
     <nav class="navbar navbar-expand-lg bg-body-tertiary navbar-border">
     <div class="container-fluid">
         <a class="navbar-brand d-flex align-items-center ms-2" href="/">
-            <h3 class="me-2 mb-0 text-dark">Przychodnia lekarska</h3>
+            <h3 class="me-2 mb-0 text-dark">@title</h3>
             <img src="~/images/clinic-icon.png" alt="clinic icon" style="width: 40px; height: 40px;" />
         </a>
 
@@ -37,7 +33,7 @@
             }
 
             <li class="nav-item">
-                <a class="btn btn-success me-2 text-white" href="/account">Moje konto</a>
+                <a class="btn btn-success me-2 text-white" href="/account">@myAccountText</a>
             </li>
         </ul>
         </div>

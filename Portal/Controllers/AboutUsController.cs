@@ -14,6 +14,7 @@ public class AboutUsController : Controller
 
   public IActionResult Index()
   {
+    ViewBag.Layout = GenerateLayout.GenerateLayoutViewModel(_context);
     var text = _context.Texts.ToList();
 
     return View(text);

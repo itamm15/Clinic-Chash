@@ -18,6 +18,7 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
+        ViewBag.Layout = GenerateLayout.GenerateLayoutViewModel(_context);
         var texts = _context.Texts.ToList();
 
         var icons = new Dictionary<string, string>
