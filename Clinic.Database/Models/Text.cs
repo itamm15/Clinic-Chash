@@ -8,7 +8,7 @@ namespace Clinic.Database
     public int Id { get; set; }
 
     [Required]
-    public int Key { get; set; }
+    public String Key { get; set; }
 
     [Required]
     public string Content { get; set; }
