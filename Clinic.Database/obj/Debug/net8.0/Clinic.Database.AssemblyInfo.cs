@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Clinic.Database")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a95c545b11c290613468a29673de67f6e7c3d26f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+31dee0c52c69be7eb0abe5d68903367eb141ae13")]
 [assembly: System.Reflection.AssemblyProductAttribute("Clinic.Database")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Clinic.Database")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

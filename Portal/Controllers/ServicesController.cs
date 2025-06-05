@@ -15,6 +15,8 @@ public class ServicesController : Controller
 
   public IActionResult Index()
   {
+    var text = _context.Texts.ToList();
+
     var services = _context.Examinations
                    .Include(e => e.Doctor)
                    .Select(e => new ServiceViewModel
@@ -25,6 +27,12 @@ public class ServicesController : Controller
                    })
                    .ToList();
 
-    return View(services);
+    var viewModel = new ServiceHomePageViewModel
+    {
+      Services = services,
+      Texts = text
+    };
+
+    return View(viewModel);
   }
 }
