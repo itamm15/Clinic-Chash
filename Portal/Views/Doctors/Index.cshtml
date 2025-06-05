@@ -1,14 +1,14 @@
-@model List<DoctorViewModel>
+@model DoctorHomePageViewModel
 
 @{
     ViewData["Title"] = "Harmonogram lekarzy";
 }
 
 <div class="container py-5">
-  <h3 class="text-center mb-4">Specjaliści w przychodni Świtałka</h3>
+  <h3 class="text-center mb-4">@Model.Texts.FirstOrDefault(t => t.Key == "doctors_title").Content</h3>
 
   <div class="row gy-4 justify-content-center">
-    @foreach (var doctor in @Model)
+    @foreach (var doctor in @Model.Doctors)
     {
       <div class="col-md-6">
         <div class="card bg-success text-white shadow-sm">

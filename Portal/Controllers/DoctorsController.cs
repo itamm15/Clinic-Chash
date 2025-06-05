@@ -15,6 +15,8 @@ public class DoctorsController : Controller
 
   public IActionResult Index()
   {
+
+    var texts = _context.Texts.ToList();
     var icons = new Dictionary<string, string>
     {
       ["Kardiolog"] = "bi bi-heart-pulse",
@@ -35,6 +37,12 @@ public class DoctorsController : Controller
           Email = d.Email
         }).ToList();
 
-    return View(doctors);
+    var viewModel = new DoctorHomePageViewModel
+    {
+        Doctors = doctors,
+        Texts = texts
+    };
+
+    return View(viewModel);
   }
 }
