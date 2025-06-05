@@ -1,3 +1,5 @@
+@model List<Clinic.Database.Text>
+
 @{
     ViewData["Title"] = "O nas";
 }
@@ -6,12 +8,12 @@
     <div class="accordion-item">
       <h2 class="accordion-header">
         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#aboutus" aria-expanded="true" aria-controls="aboutus">
-          <i class="bi bi-info-circle-fill me-2"></i><strong>O nas</strong>
+          <i class="bi bi-info-circle-fill me-2"></i><strong>@Model.FirstOrDefault(t => t.Key == "about_title_1")?.Content</strong>
         </button>
       </h2>
       <div id="aboutus" class="accordion-collapse collapse show" data-bs-parent="#aboutusAccordion">
         <div class="accordion-body">
-          <strong>Nasza firma</strong> została założona z pasją do doskonałości. Od początku dążymy do zapewnienia najwyższej jakości usług, zawsze skupiając się na zadowoleniu klientów.
+          @Model.FirstOrDefault(t => t.Key == "about_content_1")?.Content
         </div>
       </div>
     </div>
@@ -19,12 +21,12 @@
     <div class="accordion-item">
       <h2 class="accordion-header">
         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#team" aria-expanded="true" aria-controls="team">
-          <i class="bi bi-people-fill me-2"></i> <strong>Nasz zespół</strong>
+          <i class="bi bi-people-fill me-2"></i> <strong>@Model.FirstOrDefault(t => t.Key == "about_title_2")?.Content</strong>
         </button>
       </h2>
       <div id="team" class="accordion-collapse collapse" data-bs-parent="#aboutusAccordion">
         <div class="accordion-body">
-          <strong>Nasz zespół</strong> składa się z doświadczonych profesjonalistów, którzy są gotowi sprostać największym wyzwaniom i zapewnić naszym klientom najlepsze rozwiązania.
+          @Model.FirstOrDefault(t => t.Key == "about_content_2")?.Content
         </div>
       </div>
     </div>
@@ -32,12 +34,12 @@
     <div class="accordion-item">
       <h2 class="accordion-header">
         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mission" aria-expanded="true" aria-controls="mission">
-          <i class="bi bi-bullseye me-2"></i><strong>Nasza misja</strong>
+          <i class="bi bi-bullseye me-2"></i><strong>@Model.FirstOrDefault(t => t.Key == "about_title_3")?.Content</strong>
         </button>
       </h2>
       <div id="mission" class="accordion-collapse collapse" data-bs-parent="#aboutusAccordion">
         <div class="accordion-body">
-          Naszą misją jest dostarczanie klientom wyjątkowych doświadczeń i rozwiązań, które przyczyniają się do ich sukcesu i zadowolenia.
+          @Model.FirstOrDefault(t => t.Key == "about_content_3")?.Content
         </div>
       </div>
     </div>
@@ -45,12 +47,12 @@
     <div class="accordion-item">
       <h2 class="accordion-header">
         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#plans" aria-expanded="true" aria-controls="plans">
-          <i class="bi bi-eye-fill me-2"></i><strong>Nasza wizja</strong>
+          <i class="bi bi-eye-fill me-2"></i><strong>@Model.FirstOrDefault(t => t.Key == "about_title_4")?.Content</strong>
         </button>
       </h2>
       <div id="plans" class="accordion-collapse collapse" data-bs-parent="#aboutusAccordion">
         <div class="accordion-body">
-          Chcemy być liderem w branży, wyznaczając nowe standardy jakości i innowacji, oraz rozwijać się wraz z naszymi klientami.
+          @Model.FirstOrDefault(t => t.Key == "about_content_4")?.Content
         </div>
       </div>
     </div>
