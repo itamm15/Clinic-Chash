@@ -1,6 +1,6 @@
 @model AccountViewModel
 @{
-  ViewData["Title"] = @Model.Texts.FirstOrDefault(t => t.Key == "title_account")?.Content;
+  ViewData["Title"] = Model.Texts.FirstOrDefault(t => t.Key == "title_account")?.Content;
 }
 
 <div class="d-flex justify-content-center py-4">

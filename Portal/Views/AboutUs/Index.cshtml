@@ -1,7 +1,7 @@
 @model List<Clinic.Database.Text>
 
 @{
-    ViewData["Title"] = @Model.FirstOrDefault(t => t.Key == "title_about_us")?.Content;
+    ViewData["Title"] = Model.FirstOrDefault(t => t.Key == "title_about_us")?.Content;
 }
 <div class="container my-5">
   <div class="accordion" id="aboutusAccordion">
