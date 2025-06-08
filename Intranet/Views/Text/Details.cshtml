@@ -1,30 +1,23 @@
 @model Clinic.Database.Text
 
 @{
-    ViewData["Title"] = "Details";
+  ViewData["Title"] = "Szczegóły tekstu";
 }
 
-<h1>Details</h1>
+<div class="container-fluid py-5" style="width: 500px">
+  <h3 class="mb-4">Szczegóły tekstu</h3>
 
-<div>
-    <h4>Text</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Key)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Key)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Content)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Content)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+  <div class="mb-3">
+    <label class="form-label">Klucz</label>
+    <input class="form-control" value="@Model.Key" readonly />
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Treść</label>
+    <input class="form-control" value="@Model.Content" readonly />
+  </div>
+
+  <div class="modal-footer">
+    <a asp-action="Index" class="btn btn-secondary m-2">Powrót</a>
+  </div>
 </div>
