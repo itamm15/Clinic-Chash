@@ -1,7 +1,7 @@
 @model DoctorHomePageViewModel
 
 @{
-    ViewData["Title"] = "Harmonogram lekarzy";
+    ViewData["Title"] = Model.Texts.FirstOrDefault(t => t.Key == "title_doctors")?.Content;
 }
 
 <div class="container py-5">
