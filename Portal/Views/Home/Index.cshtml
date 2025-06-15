@@ -1,12 +1,12 @@
 ﻿@model PortalHomeViewModel
 @{
-  ViewData["Title"] = Model.Texts.FirstOrDefault(t => t.Key == "title_home")?.Content;
+  ViewData["Title"] = Model.Texts.First(t => t.Key == "title_home")?.Content;
 
     var cards = new List<(string Icon, string Title, string Description)>
     {
-        ("bi bi-search me-2", @Model.Texts.FirstOrDefault(t => t.Key == "home_card_1_title")?.Content, @Model.Texts.FirstOrDefault(t => t.Key == "home_card_1_content")?.Content),
-        ("bi bi-calendar-check-fill me-2", @Model.Texts.FirstOrDefault(t => t.Key == "home_card_2_title")?.Content, @Model.Texts.FirstOrDefault(t => t.Key == "home_card_2_content")?.Content),
-        ("bi bi-clock-fill me-2", @Model.Texts.FirstOrDefault(t => t.Key == "home_card_3_title")?.Content, @Model.Texts.FirstOrDefault(t => t.Key == "home_card_3_content")?.Content)
+        ("bi bi-search me-2", @Model.Texts.First(t => t.Key == "home_card_1_title")?.Content, @Model.Texts.First(t => t.Key == "home_card_1_content")?.Content),
+        ("bi bi-calendar-check-fill me-2", @Model.Texts.First(t => t.Key == "home_card_2_title")?.Content, @Model.Texts.First(t => t.Key == "home_card_2_content")?.Content),
+        ("bi bi-clock-fill me-2", @Model.Texts.First(t => t.Key == "home_card_3_title")?.Content, @Model.Texts.First(t => t.Key == "home_card_3_content")?.Content)
     };
 }
 
@@ -39,7 +39,7 @@
 
 <div class="container py-5">
   <h3 class="text-center mb-4">
-     @Model.Texts.FirstOrDefault(t => t.Key == "home_specs_title").Content
+     @Model.Texts.First(t => t.Key == "home_specs_title").Content
   </h3>
 
   <div class="row g-4 justify-content-center">

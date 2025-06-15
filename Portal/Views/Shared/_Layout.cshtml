@@ -44,24 +44,24 @@
     <div class="container-fluid bg-body-tertiary pt-2 pb-3">
     <div class="row d-flex justify-content-center align-items-center">
         <div class="col text-center">
-        <h5>@texts.FirstOrDefault(t => t.Key == "menu_loc_text").Content</h5>
+        <h5>@texts.First(t => t.Key == "menu_loc_text").Content</h5>
         <div class="d-flex justify-content-center align-items-center">
             <i class="bi bi-pin-map-fill"></i>
-            <p class="ms-2 mb-0">@texts.FirstOrDefault(t => t.Key == "menu_loc_value").Content</p>
+            <p class="ms-2 mb-0">@texts.First(t => t.Key == "menu_loc_value").Content</p>
         </div>
         </div>
         <div class="col text-center">
-        <h5>@texts.FirstOrDefault(t => t.Key == "menu_time_text").Content</h5>
+        <h5>@texts.First(t => t.Key == "menu_time_text").Content</h5>
         <div class="d-flex justify-content-center align-items-center">
             <i class="bi bi-clock"></i>
-            <p class="ms-2 mb-0">@texts.FirstOrDefault(t => t.Key == "menu_time_value").Content</p>
+            <p class="ms-2 mb-0">@texts.First(t => t.Key == "menu_time_value").Content</p>
         </div>
         </div>
         <div class="col text-center">
-        <h5>@texts.FirstOrDefault(t => t.Key == "menu_phone_text").Content</h5>
+        <h5>@texts.First(t => t.Key == "menu_phone_text").Content</h5>
         <div class="d-flex justify-content-center align-items-center">
             <i class="bi bi-telephone-fill" ></i>
-            <p class="ms-2 mb-0">@texts.FirstOrDefault(t => t.Key == "menu_phone_value").Content</p>
+            <p class="ms-2 mb-0">@texts.First(t => t.Key == "menu_phone_value").Content</p>
         </div>
         </div>
     </div>
@@ -76,7 +76,7 @@
         <div class="container">
             <div class="row">
                 <div class="text-center">
-                    @texts.FirstOrDefault(t => t.Key == "footer_text").Content
+                    @texts.First(t => t.Key == "footer_text").Content
                 </div>
             </div>
         </div>

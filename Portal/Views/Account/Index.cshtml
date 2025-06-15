@@ -1,31 +1,31 @@
 @model AccountViewModel
 @{
-  ViewData["Title"] = Model.Texts.FirstOrDefault(t => t.Key == "title_account")?.Content;
+  ViewData["Title"] = Model.Texts.First(t => t.Key == "title_account")?.Content;
 }
 
 <div class="d-flex justify-content-center py-4">
   <div class="card shadow-sm" style="width: 350px; max-height: 400px;">
     <div class="card-body pt-4">
-      <h3 class="card-title text-center">@Model.Texts.FirstOrDefault(t => t.Key == "account_card_title").Content</h3>
+      <h3 class="card-title text-center">@Model.Texts.First(t => t.Key == "account_card_title").Content</h3>
       <div class="card-text">
         <form>
           <div class="mb-3">
-            <label for="firstname" class="form-label">@Model.Texts.FirstOrDefault(t => t.Key == "account_card_name_label").Content</label>
-            <input type="text" class="form-control" id="firstname" value="@Model.Texts.FirstOrDefault(t => t.Key == "account_card_name_input").Content" disabled>
+            <label for="firstname" class="form-label">@Model.Texts.First(t => t.Key == "account_card_name_label").Content</label>
+            <input type="text" class="form-control" id="firstname" value="@Model.Texts.First(t => t.Key == "account_card_name_input").Content" disabled>
           </div>
 
           <div class="mb-3">
-            <label for="lastname" class="form-label">@Model.Texts.FirstOrDefault(t => t.Key == "account_card_surname_label").Content</label>
-            <input type="text" class="form-control" id="lastname" value="@Model.Texts.FirstOrDefault(t => t.Key == "account_card_surname_input").Content" disabled>
+            <label for="lastname" class="form-label">@Model.Texts.First(t => t.Key == "account_card_surname_label").Content</label>
+            <input type="text" class="form-control" id="lastname" value="@Model.Texts.First(t => t.Key == "account_card_surname_input").Content" disabled>
           </div>
 
           <div class="mb-3">
-            <label for="email" class="form-label">@Model.Texts.FirstOrDefault(t => t.Key == "account_card_email_label").Content</label>
-            <input type="email" class="form-control" id="email" value="@Model.Texts.FirstOrDefault(t => t.Key == "account_card_email_input").Content" disabled>
+            <label for="email" class="form-label">@Model.Texts.First(t => t.Key == "account_card_email_label").Content</label>
+            <input type="email" class="form-control" id="email" value="@Model.Texts.First(t => t.Key == "account_card_email_input").Content" disabled>
           </div>
         </form>
       </div>
-    <a href="/accountEdit" class="btn btn-success d-flex mx-auto mt-3">@Model.Texts.FirstOrDefault(t => t.Key == "account_card_edit_button").Content</a>
+    <a href="/accountEdit" class="btn btn-success d-flex mx-auto mt-3">@Model.Texts.First(t => t.Key == "account_card_edit_button").Content</a>
     </div>
   </div>
 
@@ -33,13 +33,13 @@
 
     <ul class="nav nav-tabs" id="useraccount" role="tablist">
       <li class="nav-item" role="presentation">
-        <button class="nav-link active" id="wizyty-tab" data-bs-toggle="tab" data-bs-target="#wizyty" type="button" role="tab" aria-controls="wizyty" aria-selected="true">@Model.Texts.FirstOrDefault(t => t.Key == "account_tab_1").Content</button>
+        <button class="nav-link active" id="wizyty-tab" data-bs-toggle="tab" data-bs-target="#wizyty" type="button" role="tab" aria-controls="wizyty" aria-selected="true">@Model.Texts.First(t => t.Key == "account_tab_1").Content</button>
       </li>
       <li class="nav-item" role="presentation">
-        <button class="nav-link" id="recepty-tab" data-bs-toggle="tab" data-bs-target="#recepty" type="button" role="tab" aria-controls="recepty" aria-selected="false">@Model.Texts.FirstOrDefault(t => t.Key == "account_tab_2").Content</button>
+        <button class="nav-link" id="recepty-tab" data-bs-toggle="tab" data-bs-target="#recepty" type="button" role="tab" aria-controls="recepty" aria-selected="false">@Model.Texts.First(t => t.Key == "account_tab_2").Content</button>
       </li>
       <li class="nav-item" role="presentation">
-        <button class="nav-link" id="platnosc-tab" data-bs-toggle="tab" data-bs-target="#platnosc" type="button" role="tab" aria-controls="platnosc" aria-selected="false">@Model.Texts.FirstOrDefault(t => t.Key == "account_tab_3").Content</button>
+        <button class="nav-link" id="platnosc-tab" data-bs-toggle="tab" data-bs-target="#platnosc" type="button" role="tab" aria-controls="platnosc" aria-selected="false">@Model.Texts.First(t => t.Key == "account_tab_3").Content</button>
       </li>
     </ul>
     <div class="tab-content" id="myTabContent">
@@ -48,9 +48,9 @@
         <table class="table table-striped">
         <thead>
             <tr>
-                <th>@Model.Texts.FirstOrDefault(t => t.Key == "account_tab_1_col_1").Content</th>
-                <th>@Model.Texts.FirstOrDefault(t => t.Key == "account_tab_1_col_2").Content</th>
-                <th>@Model.Texts.FirstOrDefault(t => t.Key == "account_tab_1_col_3").Content</th>
+                <th>@Model.Texts.First(t => t.Key == "account_tab_1_col_1").Content</th>
+                <th>@Model.Texts.First(t => t.Key == "account_tab_1_col_2").Content</th>
+                <th>@Model.Texts.First(t => t.Key == "account_tab_1_col_3").Content</th>
             </tr>
         </thead>
         <tbody>
@@ -68,8 +68,8 @@
         <table class="table table-striped">
         <thead>
             <tr>
-                <th>@Model.Texts.FirstOrDefault(t => t.Key == "account_tab_2_col_1").Content</th>
-                <th>@Model.Texts.FirstOrDefault(t => t.Key == "account_tab_2_col_2").Content</th>
+                <th>@Model.Texts.First(t => t.Key == "account_tab_2_col_1").Content</th>
+                <th>@Model.Texts.First(t => t.Key == "account_tab_2_col_2").Content</th>
             </tr>
         </thead>
         <tbody>
@@ -86,9 +86,9 @@
         <table class="table table-striped">
         <thead>
             <tr>
-                <th>@Model.Texts.FirstOrDefault(t => t.Key == "account_tab_3_col_1").Content</th>
-                <th>@Model.Texts.FirstOrDefault(t => t.Key == "account_tab_3_col_2").Content</th>
-                <th>@Model.Texts.FirstOrDefault(t => t.Key == "account_tab_3_col_3").Content</th>
+                <th>@Model.Texts.First(t => t.Key == "account_tab_3_col_1").Content</th>
+                <th>@Model.Texts.First(t => t.Key == "account_tab_3_col_2").Content</th>
+                <th>@Model.Texts.First(t => t.Key == "account_tab_3_col_3").Content</th>
             </tr>
         </thead>
         <tbody>

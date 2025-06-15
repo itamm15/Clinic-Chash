@@ -1,11 +1,11 @@
 @model DoctorHomePageViewModel
 
 @{
-    ViewData["Title"] = Model.Texts.FirstOrDefault(t => t.Key == "title_doctors")?.Content;
+    ViewData["Title"] = Model.Texts.First(t => t.Key == "title_doctors")?.Content;
 }
 
 <div class="container py-5">
-  <h3 class="text-center mb-4">@Model.Texts.FirstOrDefault(t => t.Key == "doctors_title").Content</h3>
+  <h3 class="text-center mb-4">@Model.Texts.First(t => t.Key == "doctors_title").Content</h3>
 
   <div class="row gy-4 justify-content-center">
     @foreach (var doctor in @Model.Doctors)
