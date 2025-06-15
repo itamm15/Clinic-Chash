@@ -7,7 +7,10 @@
 <p>
     <div class="d-flex justify-content-between">
         <h3>Płatności</h3>
-        <a asp-action="Create" class="btn btn-success">Dodaj płatność</a>
+        <div>
+            <a asp-action="Create" class="btn btn-success">Dodaj płatność</a>
+            <a asp-action="GeneratePdf" class="btn btn-success">Raport PDF</a>
+        </div>
     </div>
 </p>
 

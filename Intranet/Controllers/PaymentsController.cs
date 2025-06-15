@@ -18,6 +18,13 @@ namespace Intranet.Controllers
             _context = context;
         }
 
+        public IActionResult GeneratePdf()
+        {
+            List<Payment> payments = _context.Payments.Include(p => p.Patient).ToList();
+            var pdf = GeneratePaymentsPdf.Run(payments);
+            return File(pdf, "application/pdf", $"raport_platnosci.pdf");
+        }
+
         // GET: Payments
         public async Task<IActionResult> Index()
         {
