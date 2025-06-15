@@ -1,5 +1,6 @@
 using Clinic.Database;
 using Microsoft.EntityFrameworkCore;
+using QuestPDF.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +11,9 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 var app = builder.Build();
+
+// License for QuestPDF
+QuestPDF.Settings.License = LicenseType.Community;
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

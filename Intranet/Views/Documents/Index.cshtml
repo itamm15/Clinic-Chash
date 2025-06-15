@@ -38,6 +38,9 @@
                         <i class="bi bi-trash-fill"></i>
                     </button>
                 </form>
+                <a asp-action="Generate" asp-route-id="@item.Id" class="btn btn-outline-primary btn-sm me-1" title="Generuj PDF">
+                    <i class="bi bi-filetype-pdf"></i>
+                </a>
             </td>
         </tr>
 }

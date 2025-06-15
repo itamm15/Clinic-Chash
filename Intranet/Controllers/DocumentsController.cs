@@ -18,6 +18,19 @@ namespace Intranet.Controllers
             _context = context;
         }
 
+        // Generate PDF
+        public IActionResult Generate(int id)
+        {
+            var document = _context.Documents.First(m => m.Id == id);
+            if (document == null)
+            {
+                return NotFound();
+            }
+
+            var pdf = GenerateDocumentPdf.Run(document);
+            return File(pdf, "application/pdf", $"dokument_{id}.pdf");
+        }
+
         // GET: Documents
         public async Task<IActionResult> Index()
         {

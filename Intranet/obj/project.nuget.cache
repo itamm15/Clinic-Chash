@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "FV1ZWzsWZXWjuUAZVu/ERAE+Q4Pzrbb3ksxAyhaDxrvh6sOuaE8WYSe0hsEozhqSaabdcZTWEFjeDufAEGRtiA==",
+  "dgSpecHash": "/PuvKVyoT22IfR1iAp3q/1kMEtx2fcS5yHIWU52rR2wyXEnNU1Zrbi0MzdJylWE5ak+VTfAhKk1VD72KgosjMw==",
   "success": true,
   "projectFilePath": "/Users/mateuszosinski/Desktop/clinic-chash/Intranet/Intranet.csproj",
   "expectedPackageFiles": [
@@ -127,6 +127,7 @@
     "/Users/mateuszosinski/.nuget/packages/nuget.projectmodel/6.11.0/nuget.projectmodel.6.11.0.nupkg.sha512",
     "/Users/mateuszosinski/.nuget/packages/nuget.protocol/6.11.0/nuget.protocol.6.11.0.nupkg.sha512",
     "/Users/mateuszosinski/.nuget/packages/nuget.versioning/6.11.0/nuget.versioning.6.11.0.nupkg.sha512",
+    "/Users/mateuszosinski/.nuget/packages/questpdf/2025.5.1/questpdf.2025.5.1.nupkg.sha512",
     "/Users/mateuszosinski/.nuget/packages/system.clientmodel/1.0.0/system.clientmodel.1.0.0.nupkg.sha512",
     "/Users/mateuszosinski/.nuget/packages/system.codedom/6.0.0/system.codedom.6.0.0.nupkg.sha512",
     "/Users/mateuszosinski/.nuget/packages/system.collections.immutable/8.0.0/system.collections.immutable.8.0.0.nupkg.sha512",
