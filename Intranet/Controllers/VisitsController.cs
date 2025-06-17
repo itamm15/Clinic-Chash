@@ -25,6 +25,18 @@ namespace Intranet.Controllers
             return View(await appDbContext.ToListAsync());
         }
 
+        public IActionResult Calendar()
+        {
+            var visits = _context.Visits.Select(v => new CalendarVisits { title = v.VisitReason, start = v.VisitDate, end = v.VisitDate}).ToList();
+            Console.Write(visits);
+            var data = new CalendarViewModel
+            {
+                Visits = visits
+            };
+
+            return View(data);
+        }
+
         // GET: Visits/Details/5
         public async Task<IActionResult> Details(int? id)
         {

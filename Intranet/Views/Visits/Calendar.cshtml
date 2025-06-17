@@ -1,0 +1,21 @@
+@model CalendarViewModel
+
+<div id='calendar' class="mt-4"/>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const calendarEl = document.getElementById("calendar");
+
+    const calendar = new FullCalendar.Calendar(calendarEl, {
+            initialView: 'dayGridMonth',
+            locale: 'pl',
+            headerToolbar: {
+                left: 'prev,next today',
+                center: 'title',
+                right: ''
+            },
+            events: @Html.Raw(Json.Serialize(Model.Visits))
+        });
+        calendar.render();
+  })
+</script>
