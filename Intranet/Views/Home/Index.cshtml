@@ -29,7 +29,6 @@
             datasets: [{
                 label: 'Wizyty',
                 data: @Html.Raw(Json.Serialize(@Model.Visits.Data)),
-                borderWidth: 1
             }]
         }
     });
@@ -41,7 +40,6 @@
             datasets: [{
                 label: 'platnosci',
                 data: @Html.Raw(Json.Serialize(@Model.Payments.Data)),
-                borderWidth: 1
             }]
         }
     });
