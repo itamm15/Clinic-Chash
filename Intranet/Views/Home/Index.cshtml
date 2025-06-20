@@ -3,39 +3,26 @@
     ViewData["Title"] = "Strona główna";
 }
 
-<div class="container mt-4">
-    <div class="row text-center">
-        <div class="col-md-4">
-            <div class="card bg-light mb-3">
-                <div class="card-body">
-                    <h5 class="card-title">Wizyty ogółem</h5>
-                    <p class="display-6">@Model.Visits.Count</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card bg-light mb-3">
-                <div class="card-body">
-                    <h5 class="card-title">Nachodzace wizyty</h5>
-                    <p class="display-6">@Model.Visits.Count(v => v.VisitDate > DateTime.Now)</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card bg-light mb-3">
-                <div class="card-body">
-                    <h5 class="card-title">Pacjenci</h5>
-                    <p class="display-6">@Model.Patients.Count</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card bg-light mb-3">
-                <div class="card-body">
-                    <h5 class="card-title">Lekarze</h5>
-                    <p class="display-6">@Model.Doctors.Count</p>
-                </div>
-            </div>
-        </div>
-    </div>
+
+<div style="width: 700px; height: 700px; padding-top: 20px;">
+    <h2>Liczba wizyt w @DateTime.Now.Year</h2>
+    <canvas id="visits" width="200" height="100" />
 </div>
+
+
+<script>
+    // visits chart
+    const visitCanvas = document.getElementById('visits');
+
+    new Chart(visitCanvas, {
+        type: 'bar',
+        data: {
+            labels: @Html.Raw(Json.Serialize(@Model.Visits.Label)),
+            datasets: [{
+                label: 'Wizyty',
+                data: @Html.Raw(Json.Serialize(@Model.Visits.Data)),
+                borderWidth: 1
+            }]
+        }
+    });
+</script>

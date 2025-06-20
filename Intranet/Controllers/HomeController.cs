@@ -18,11 +18,33 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
+        var currentYear = DateTime.Now.Year;
+
+        var visitsSummary = _context
+                            .Visits
+                            .Where(v => v.VisitDate.Year == currentYear)
+                            .GroupBy(v => v.VisitDate.Month)
+                            .Select(v => new
+                            {
+                                Month = v.Key,
+                                NumberOfVisist = v.Count()
+                            })
+                            .OrderBy(v => v.Month)
+                            .ToList();
+
+        visitsSummary = Enumerable.Range(1, 12)
+                        .Select(index => new
+                        {
+                            Month = index,
+                            NumberOfVisist = visitsSummary.FirstOrDefault(v => v.Month == index)?.NumberOfVisist ?? 0
+                        })
+                        .ToList();
+
         var indexModel = new HomeIndexViewModel
         {
             Patients = _context.Patients.ToList(),
             Doctors = _context.Doctors.ToList(),
-            Visits = _context.Visits.ToList(),
+            Visits = new VisitsSummary { Label = visitsSummary.Select(v => v.Month).ToList(), Data = visitsSummary.Select(v => v.NumberOfVisist).ToList() }
         };
 
         return View(indexModel);
