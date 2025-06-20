@@ -4,15 +4,23 @@
 }
 
 
-<div style="width: 700px; height: 700px; padding-top: 20px;">
-    <h2>Liczba wizyt w @DateTime.Now.Year</h2>
-    <canvas id="visits" width="200" height="100" />
+<div style="display: flex; justify-content: space-between; padding-top: 20px;">
+    <div>
+        <h2>Liczba wizyt w @DateTime.Now.Year</h2>
+        <canvas id="visits" width="600" height="300" ></canvas>
+    </div>
+
+    <div>
+        <h2>Suma platnosci w @DateTime.Now.Year</h2>
+        <canvas id="payments" width="600" height="300" ></canvas>
+    </div>
 </div>
 
 
 <script>
     // visits chart
     const visitCanvas = document.getElementById('visits');
+    const paymentsCanvas = document.getElementById('payments');
 
     new Chart(visitCanvas, {
         type: 'bar',
@@ -21,6 +29,18 @@
             datasets: [{
                 label: 'Wizyty',
                 data: @Html.Raw(Json.Serialize(@Model.Visits.Data)),
+                borderWidth: 1
+            }]
+        }
+    });
+
+    new Chart(paymentsCanvas, {
+        type: 'bar',
+        data: {
+            labels: @Html.Raw(Json.Serialize(@Model.Payments.Label)),
+            datasets: [{
+                label: 'platnosci',
+                data: @Html.Raw(Json.Serialize(@Model.Payments.Data)),
                 borderWidth: 1
             }]
         }

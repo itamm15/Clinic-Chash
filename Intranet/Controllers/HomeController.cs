@@ -40,11 +40,32 @@ public class HomeController : Controller
                         })
                         .ToList();
 
+        var paymentsSummary = _context
+                            .Payments
+                            .Where(p => p.PaymentDate.Year == currentYear)
+                            .GroupBy(p => p.PaymentDate.Month)
+                            .Select(p => new
+                            {
+                                Month = p.Key,
+                                SumOfPayments = p.Sum(p => p.Amount)
+                            })
+                            .OrderBy(p => p.Month)
+                            .ToList();
+
+        paymentsSummary = Enumerable.Range(1, 12)
+                        .Select(index => new
+                        {
+                            Month = index,
+                            SumOfPayments = paymentsSummary.FirstOrDefault(p => p.Month == index)?.SumOfPayments ?? 0
+                        })
+                        .ToList();
+
         var indexModel = new HomeIndexViewModel
         {
             Patients = _context.Patients.ToList(),
             Doctors = _context.Doctors.ToList(),
-            Visits = new VisitsSummary { Label = visitsSummary.Select(v => v.Month).ToList(), Data = visitsSummary.Select(v => v.NumberOfVisist).ToList() }
+            Visits = new VisitsSummary { Label = visitsSummary.Select(v => v.Month).ToList(), Data = visitsSummary.Select(v => v.NumberOfVisist).ToList() },
+            Payments = new PaymentsSummary { Label = paymentsSummary.Select(p => p.Month).ToList(), Data = paymentsSummary.Select(p => p.SumOfPayments).ToList() }
         };
 
         return View(indexModel);
