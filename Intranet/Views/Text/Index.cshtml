@@ -15,6 +15,8 @@
   }
   else
   {
+    <input type="text" class="form-control mt-4 w-50" placeholder="Szukaj po tekście" id="searcher">
+
     <table class="table table-striped my-4">
       <thead>
         <tr>
@@ -27,7 +29,7 @@
       <tbody>
         @foreach (var item in Model)
         {
-          <tr>
+          <tr data-value="@item.Content">
             <td>@item.Id</td>
             <td>@item.Key</td>
             <td>@item.Content</td>
@@ -50,3 +52,23 @@
     </table>
   }
 </div>
+
+
+<script>
+  const searcher = document.getElementById('searcher');
+  const rows = document.querySelectorAll("table tbody tr");
+
+  searcher.addEventListener('input', (event) => {
+    const text = event.target.value.toLowerCase();
+
+    rows.forEach(row => {
+      const rowText = row.dataset.value.toLowerCase();
+
+      if (rowText.includes(text)) {
+        row.style.display = 'table-row';
+      } else {
+        row.style.display = 'none';
+      }
+    })
+  })
+</script>
